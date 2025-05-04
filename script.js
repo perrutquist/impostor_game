@@ -26,11 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const discussionAnswersList = document.getElementById('discussion-answers');
     const proceedToVotingButton = document.getElementById('proceed-to-voting-button');
 
-    const votingPlayerName = document.getElementById('voting-player-name');
+    // Voting Screen Elements
+    const votingPrompt = document.getElementById('voting-prompt'); // Get the h2 element
+    const votingPlayerName = document.getElementById('voting-player-name'); // Span inside h2
     const votingOptionsDiv = document.getElementById('voting-options');
     const submitVoteButton = document.getElementById('submit-vote-button');
     const voteError = document.getElementById('vote-error');
 
+    // Final Screen Elements
     const impostorReveal = document.getElementById('impostor-reveal');
     const resultsVotesList = document.getElementById('results-votes');
     const winnerMessage = document.getElementById('winner-message');
@@ -217,11 +220,18 @@ document.addEventListener('DOMContentLoaded', () => {
         promptNextPlayer(); // Start the voting sequence
     }
 
-
     function showVotingOptions() {
         const currentPlayer = players[currentPlayerIndex];
-        votingPlayerName.textContent = currentPlayer.name;
+        // votingPlayerName.textContent = currentPlayer.name; // Name is set within the prompt now
         voteError.textContent = ''; // Clear previous error
+
+        // Set the voting prompt based on whether the player is the impostor
+        if (currentPlayer.isImpostor) {
+            votingPrompt.textContent = `${currentPlayer.name}, whom do you vote for?`;
+        } else {
+            votingPrompt.textContent = `${currentPlayer.name}, who do you think is the Impostor?`;
+        }
+
 
         votingOptionsDiv.innerHTML = ''; // Clear previous options
         players.forEach((player, index) => {
