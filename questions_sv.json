@@ -1,10 +1,58 @@
 [
     {
-        "official": "Nämn en typ av frukt du kan hitta i en fruktsallad. (SV)",
-        "impostor": "Nämn en typ av grönsak du kan lägga i en grönsallad. (SV)"
+        "official": "Vilken är den mest avkopplande aktiviteten du kan tänka dig? (SV)",
+        "impostor": "Vilken är den mest spännande aktiviteten du kan tänka dig? (SV)"
     },
     {
-        "official": "Nämn en känd superhjälte. (SV)",
-        "impostor": "Nämn en känd superskurk. (SV)"
+        "official": "Om du omedelbart kunde bli expert på en färdighet, vilken skulle det vara? (SV)",
+        "impostor": "Vilken färdighet beundrar du hos andra men har inget intresse av att lära dig själv? (SV)"
+    },
+    {
+        "official": "Vilket djur representerar bäst din personlighet? (SV)",
+        "impostor": "Vilket djur tycker du är mest skrämmande? (SV)"
+    },
+    {
+        "official": "Vilken film tycker du är mest överskattad? (SV)",
+        "impostor": "Vilken är din favoritfilm? (SV)"
+    },
+    {
+        "official": "Vad är din go-to tröstmat? (SV)",
+        "impostor": "Vad äter du bara för att det är hälsosamt? (SV)"
+    },
+    {
+        "official": "Hur många timmars sömn behöver du helst per natt? (SV)",
+        "impostor": "Ange ett nummer mellan 5 och 10. (SV)"
+    },
+    {
+        "official": "Vad är det bästa sättet att tillbringa en regnig dag? (SV)",
+        "impostor": "Vad är det bästa sättet att tillbringa en solig dag? (SV)"
+    },
+    {
+        "official": "Om du kunde ha vilken superkraft som helst, vilken skulle det vara? (SV)",
+        "impostor": "Vilken är den mest opraktiska superkraften du kan föreställa dig? (SV)"
+    },
+    {
+        "official": "Vilken fiktiv värld skulle du helst vilja leva i? (SV)",
+        "impostor": "Vilken fiktiv värld verkar trevlig men skulle faktiskt vara skrämmande att leva i? (SV)"
+    },
+    {
+        "official": "Om du var tvungen att äta en typ av måltid resten av livet, vad skulle det vara? (SV)",
+        "impostor": "Vad åt du till frukost i morse? (SV)"
+    },
+    {
+        "official": "Vad är det mest användbara du äger? (SV)",
+        "impostor": "Vad äger du som du förmodligen borde göra dig av med? (SV)"
+    },
+    {
+        "official": "Vilken enkel njutning uppskattar du? (SV)",
+        "impostor": "Vilken nödvändig syssla ogillar du? (SV)"
+    },
+    {
+        "official": "Vilket ämne skulle du kunna hålla en 30-minuters presentation om utan förberedelser? (SV)",
+        "impostor": "Vilket ämne vet du absolut ingenting om? (SV)"
+    },
+    {
+        "official": "Vilket är det bästa rådet du någonsin har fått? (SV)",
+        "impostor": "Vilket är det sämsta rådet du någonsin har följt? (SV)"
     }
 ]

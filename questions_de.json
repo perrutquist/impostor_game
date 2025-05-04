@@ -1,10 +1,58 @@
 [
     {
-        "official": "Nennen Sie eine Obstsorte, die Sie in einem Obstsalat finden könnten. (DE)",
-        "impostor": "Nennen Sie eine Gemüsesorte, die Sie in einen grünen Salat geben würden. (DE)"
+        "official": "Was ist die entspannendste Aktivität, die Ihnen einfällt? (DE)",
+        "impostor": "Was ist die aufregendste Aktivität, die Ihnen einfällt? (DE)"
     },
     {
-        "official": "Nennen Sie einen berühmten Superhelden. (DE)",
-        "impostor": "Nennen Sie einen berühmten Superschurken. (DE)"
+        "official": "Wenn Sie sofort Experte in einer Fähigkeit werden könnten, welche wäre das? (DE)",
+        "impostor": "Welche Fähigkeit bewundern Sie bei anderen, haben aber kein Interesse daran, sie selbst zu lernen? (DE)"
+    },
+    {
+        "official": "Welches Tier repräsentiert Ihre Persönlichkeit am besten? (DE)",
+        "impostor": "Welches Tier finden Sie am einschüchterndsten? (DE)"
+    },
+    {
+        "official": "Welchen Film halten Sie für am meisten überbewertet? (DE)",
+        "impostor": "Welcher ist Ihr Lieblingsfilm? (DE)"
+    },
+    {
+        "official": "Was ist Ihr Lieblings-Comfort-Food? (DE)",
+        "impostor": "Was essen Sie nur, weil es gesund ist? (DE)"
+    },
+    {
+        "official": "Wie viele Stunden Schlaf brauchen Sie idealerweise pro Nacht? (DE)",
+        "impostor": "Nennen Sie eine Zahl zwischen 5 und 10. (DE)"
+    },
+    {
+        "official": "Was ist der beste Weg, einen regnerischen Tag zu verbringen? (DE)",
+        "impostor": "Was ist der beste Weg, einen sonnigen Tag zu verbringen? (DE)"
+    },
+    {
+        "official": "Wenn Sie eine Superkraft haben könnten, welche wäre das? (DE)",
+        "impostor": "Was ist die unpraktischste Superkraft, die Sie sich vorstellen können? (DE)"
+    },
+    {
+        "official": "In welcher fiktiven Welt würden Sie am liebsten leben? (DE)",
+        "impostor": "Welche fiktive Welt scheint nett zu sein, wäre aber tatsächlich erschreckend, darin zu leben? (DE)"
+    },
+    {
+        "official": "Wenn Sie für den Rest Ihres Lebens nur eine Art von Mahlzeit essen müssten, welche wäre das? (DE)",
+        "impostor": "Was haben Sie heute Morgen gefrühstückt? (DE)"
+    },
+    {
+        "official": "Was ist das Nützlichste, das Sie besitzen? (DE)",
+        "impostor": "Was besitzen Sie, das Sie wahrscheinlich wegwerfen sollten? (DE)"
+    },
+    {
+        "official": "Welche einfache Freude genießen Sie? (DE)",
+        "impostor": "Welche notwendige Hausarbeit mögen Sie nicht? (DE)"
+    },
+    {
+        "official": "Über welches Thema könnten Sie ohne Vorbereitung eine 30-minütige Präsentation halten? (DE)",
+        "impostor": "Über welches Thema wissen Sie absolut nichts? (DE)"
+    },
+    {
+        "official": "Was ist der beste Ratschlag, den Sie je erhalten haben? (DE)",
+        "impostor": "Was ist der schlechteste Ratschlag, den Sie je befolgt haben? (DE)"
     }
 ]
