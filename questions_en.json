@@ -1,30 +1,42 @@
 [
     {
-        "official": "Name a type of fruit you might find in a fruit salad.",
-        "impostor": "Name a type of vegetable you might put in a green salad."
+        "official": "What's your favorite season and why?",
+        "impostor": "Describe your ideal weather."
     },
     {
-        "official": "Name a famous superhero.",
-        "impostor": "Name a famous supervillain."
+        "official": "Which superpower would you choose if you could have only one?",
+        "impostor": "If you were a supervillain, what would your main goal be?"
     },
     {
-        "official": "Name something you'd take to the beach.",
-        "impostor": "Name something you'd take on a camping trip."
+        "official": "What's the most relaxing activity you can think of?",
+        "impostor": "What's the most exciting activity you can think of?"
     },
     {
-        "official": "Name a popular social media app.",
-        "impostor": "Name a popular online shopping website."
+        "official": "If you could instantly become an expert in one skill, what would it be?",
+        "impostor": "What's a skill you admire in others but have no interest in learning yourself?"
     },
     {
-        "official": "Name a common pet.",
-        "impostor": "Name a farm animal."
+        "official": "What animal best represents your personality?",
+        "impostor": "What animal do you find the most intimidating?"
     },
     {
-        "official": "Name a movie genre.",
-        "impostor": "Name a book genre."
+        "official": "Which movie genre do you think is the most overrated?",
+        "impostor": "Which book genre do you wish was more popular?"
     },
     {
-        "official": "Name a breakfast food.",
-        "impostor": "Name a dessert."
+        "official": "What's your go-to comfort food?",
+        "impostor": "What's a food you absolutely cannot stand?"
+    },
+    {
+        "official": "How many hours of sleep do you ideally need per night?",
+        "impostor": "Give a number between 5 and 10."
+    },
+    {
+        "official": "What's the best way to spend a rainy day?",
+        "impostor": "What's the best way to spend a sunny day?"
+    },
+    {
+        "official": "Which historical period would you most like to visit?",
+        "impostor": "Which fictional world would you most like to live in?"
     }
 ]
