@@ -550,7 +550,12 @@ document.addEventListener('DOMContentLoaded', () => {
         currentPlayerIndex = 0;
         gameState = 'setup';
         currentVotes = {};
-        playerNamesInput.value = ''; // Clear input field
+        // Pre-fill player names for the next game
+        if (players && players.length > 0) {
+            playerNamesInput.value = players.map(p => p.name).join('\n');
+        } else {
+            playerNamesInput.value = ''; // Clear if no players somehow
+        }
         startError.textContent = '';
         answerError.textContent = '';
         voteError.textContent = '';
