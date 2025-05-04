@@ -199,14 +199,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function showDiscussion() {
         discussionQuestion.textContent = currentQuestionPair.official;
 
-        // Get all answers and shuffle them
-        const answers = players.map(p => p.answer);
-        shuffleArray(answers);
-
         discussionAnswersList.innerHTML = ''; // Clear previous list
-        answers.forEach(answer => {
+        // Display each player's name and answer
+        players.forEach(player => {
             const li = document.createElement('li');
-            li.textContent = answer;
+            li.textContent = `${player.name}: ${player.answer}`; // Show name and answer
             discussionAnswersList.appendChild(li);
         });
 
