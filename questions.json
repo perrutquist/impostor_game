@@ -1,0 +1,30 @@
+[
+    {
+        "official": "Name a type of fruit you might find in a fruit salad.",
+        "impostor": "Name a type of vegetable you might put in a green salad."
+    },
+    {
+        "official": "Name a famous superhero.",
+        "impostor": "Name a famous supervillain."
+    },
+    {
+        "official": "Name something you'd take to the beach.",
+        "impostor": "Name something you'd take on a camping trip."
+    },
+    {
+        "official": "Name a popular social media app.",
+        "impostor": "Name a popular online shopping website."
+    },
+    {
+        "official": "Name a common pet.",
+        "impostor": "Name a farm animal."
+    },
+    {
+        "official": "Name a movie genre.",
+        "impostor": "Name a book genre."
+    },
+    {
+        "official": "Name a breakfast food.",
+        "impostor": "Name a dessert."
+    }
+]

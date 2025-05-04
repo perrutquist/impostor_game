@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Impostor Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <h1>The Impostor Game</h1>
+            <p>Enter player names (one per line or comma-separated):</p>
+            <textarea id="player-names-input" rows="5" cols="30"></textarea>
+            <button id="start-game-button">Start Game</button>
+            <p id="start-error" class="error-message"></p>
+        </div>
+
+        <!-- Next Player Screen -->
+        <div id="next-player-screen" class="screen">
+            <h2 id="next-player-message">Pass the device to PlayerName.</h2>
+            <button id="next-player-button">Show My Question / Start Voting</button>
+        </div>
+
+        <!-- Question Screen -->
+        <div id="question-screen" class="screen">
+            <h2>Question for <span id="question-player-name">PlayerName</span>:</h2>
+            <p id="question-text">This is where the question will appear.</p>
+            <input type="text" id="answer-input" placeholder="Enter your answer">
+            <button id="submit-answer-button">Submit Answer</button>
+            <p id="answer-error" class="error-message"></p>
+        </div>
+
+        <!-- Discussion Screen -->
+        <div id="discussion-screen" class="screen">
+            <h2>Discussion Time!</h2>
+            <p><strong>The Official Question Was:</strong></p>
+            <p id="discussion-question">The official question text.</p>
+            <p><strong>Answers Given (in random order):</strong></p>
+            <ul id="discussion-answers">
+                <!-- Answers will be listed here -->
+            </ul>
+            <p>Discuss the answers and try to identify the Impostor.</p>
+            <button id="proceed-to-voting-button">Proceed to Voting</button>
+        </div>
+
+        <!-- Voting Screen -->
+        <div id="voting-screen" class="screen">
+            <h2><span id="voting-player-name">PlayerName</span>, who do you think is the Impostor?</h2>
+            <div id="voting-options">
+                <!-- Voting buttons/radio inputs will go here -->
+            </div>
+            <button id="submit-vote-button">Cast Vote</button>
+             <p id="vote-error" class="error-message"></p>
+        </div>
+
+        <!-- Final Screen -->
+        <div id="final-screen" class="screen">
+            <h2>Results</h2>
+            <p><strong>The Impostor was:</strong> <span id="impostor-reveal">ImpostorName</span></p>
+            <p><strong>Votes Received:</strong></p>
+            <ul id="results-votes">
+                <!-- Vote counts per player -->
+            </ul>
+            <h3 id="winner-message">Winner message goes here.</h3>
+            <button id="play-again-button">Play Again</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
