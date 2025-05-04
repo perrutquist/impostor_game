@@ -1,58 +1,58 @@
 [
     {
-        "official": "Quelle est l'activité la plus relaxante à laquelle vous pouvez penser ? (FR)",
-        "impostor": "Quelle est l'activité la plus excitante à laquelle vous pouvez penser ? (FR)"
+        "official": "Quelle est l'activité la plus relaxante à laquelle vous pouvez penser ?",
+        "impostor": "Quelle est l'activité la plus excitante à laquelle vous pouvez penser ?"
     },
     {
-        "official": "Si vous pouviez devenir instantanément expert dans une compétence, laquelle choisiriez-vous ? (FR)",
-        "impostor": "Quelle compétence admirez-vous chez les autres mais n'avez aucun intérêt à apprendre vous-même ? (FR)"
+        "official": "Si vous pouviez devenir instantanément expert dans une compétence, laquelle choisiriez-vous ?",
+        "impostor": "Quelle compétence admirez-vous chez les autres mais n'avez aucun intérêt à apprendre vous-même ?"
     },
     {
-        "official": "Quel animal représente le mieux votre personnalité ? (FR)",
-        "impostor": "Quel animal trouvez-vous le plus intimidant ? (FR)"
+        "official": "Quel animal représente le mieux votre personnalité ?",
+        "impostor": "Quel animal trouvez-vous le plus intimidant ?"
     },
     {
-        "official": "Quel film pensez-vous être le plus surévalué ? (FR)",
-        "impostor": "Quel est votre film préféré ? (FR)"
+        "official": "Quel film pensez-vous être le plus surévalué ?",
+        "impostor": "Quel est votre film préféré ?"
     },
     {
-        "official": "Quel est votre plat réconfortant préféré ? (FR)",
-        "impostor": "Qu'est-ce que vous ne mangez que parce que c'est sain ? (FR)"
+        "official": "Quel est votre plat réconfortant préféré ?",
+        "impostor": "Qu'est-ce que vous ne mangez que parce que c'est sain ?"
     },
     {
-        "official": "De combien d'heures de sommeil avez-vous idéalement besoin par nuit ? (FR)",
-        "impostor": "Donnez un nombre entre 5 et 10. (FR)"
+        "official": "De combien d'heures de sommeil avez-vous idéalement besoin par nuit ?",
+        "impostor": "Donnez un nombre entre 5 et 10."
     },
     {
-        "official": "Quelle est la meilleure façon de passer une journée pluvieuse ? (FR)",
-        "impostor": "Quelle est la meilleure façon de passer une journée ensoleillée ? (FR)"
+        "official": "Quelle est la meilleure façon de passer une journée pluvieuse ?",
+        "impostor": "Quelle est la meilleure façon de passer une journée ensoleillée ?"
     },
     {
-        "official": "Si vous pouviez avoir un super-pouvoir, lequel serait-ce ? (FR)",
-        "impostor": "Quel est le super-pouvoir le plus gênant que vous puissiez imaginer ? (FR)"
+        "official": "Si vous pouviez avoir un super-pouvoir, lequel serait-ce ?",
+        "impostor": "Quel est le super-pouvoir le plus gênant que vous puissiez imaginer ?"
     },
     {
-        "official": "Dans quel monde fictif aimeriez-vous le plus vivre ? (FR)",
-        "impostor": "Quel monde fictif semble agréable mais serait en fait terrifiant à vivre ? (FR)"
+        "official": "Dans quel monde fictif aimeriez-vous le plus vivre ?",
+        "impostor": "Quel monde fictif semble agréable mais serait en fait terrifiant à vivre ?"
     },
     {
-        "official": "Si vous deviez manger un seul type de repas pour le reste de votre vie, lequel serait-ce ? (FR)",
-        "impostor": "Qu'avez-vous mangé au petit-déjeuner ce matin ? (FR)"
+        "official": "Si vous deviez manger un seul type de repas pour le reste de votre vie, lequel serait-ce ?",
+        "impostor": "Qu'avez-vous mangé au petit-déjeuner ce matin ?"
     },
     {
-        "official": "Quelle est la chose la plus utile que vous possédez ? (FR)",
-        "impostor": "Quelle chose que vous possédez devriez-vous probablement jeter ? (FR)"
+        "official": "Quelle est la chose la plus utile que vous possédez ?",
+        "impostor": "Quelle chose que vous possédez devriez-vous probablement jeter ?"
     },
     {
-        "official": "Quel plaisir simple appréciez-vous ? (FR)",
-        "impostor": "Quelle corvée nécessaire n'aimez-vous pas ? (FR)"
+        "official": "Quel plaisir simple appréciez-vous ?",
+        "impostor": "Quelle corvée nécessaire n'aimez-vous pas ?"
     },
     {
-        "official": "Sur quel sujet pourriez-vous faire une présentation de 30 minutes sans préparation ? (FR)",
-        "impostor": "Sur quel sujet ne savez-vous absolument rien ? (FR)"
+        "official": "Sur quel sujet pourriez-vous faire une présentation de 30 minutes sans préparation ?",
+        "impostor": "Sur quel sujet ne savez-vous absolument rien ?"
     },
     {
-        "official": "Quel est le meilleur conseil que vous ayez jamais reçu ? (FR)",
-        "impostor": "Quel est le pire conseil que vous ayez jamais suivi ? (FR)"
+        "official": "Quel est le meilleur conseil que vous ayez jamais reçu ?",
+        "impostor": "Quel est le pire conseil que vous ayez jamais suivi ?"
     }
 ]

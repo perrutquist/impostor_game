@@ -36,28 +36,12 @@
         "impostor": "What fictional world seems nice but would actually be terrifying to live in?"
     },
     {
-        "official": "What's a small thing that makes your day better?",
-        "impostor": "What's a small thing that can instantly ruin your mood?"
-    },
-    {
-        "official": "If you had to eat one type of cuisine for the rest of your life, what would it be?",
-        "impostor": "What's a food you absolutely cannot stand?"
+        "official": "If you had to eat one type of meal for the rest of your life, what would it be?",
+        "impostor": "What did you have for breakfast this morning?"
     },
     {
         "official": "What's the most useful thing you own?",
         "impostor": "What's something you own that you probably should get rid of?"
-    },
-    {
-        "official": "What song always gets stuck in your head?",
-        "impostor": "What song do you wish you could unhear?"
-    },
-    {
-        "official": "What's your favorite season and why?",
-        "impostor": "What's your least favorite type of weather?"
-    },
-    {
-        "official": "If you could talk to animals, which animal would you talk to first?",
-        "impostor": "If you were an animal, what sound would you make?"
     },
     {
         "official": "What's a simple pleasure you enjoy?",
@@ -70,9 +54,5 @@
     {
         "official": "What's the best piece of advice you've ever received?",
         "impostor": "What's the worst piece of advice you've ever followed?"
-    },
-    {
-        "official": "If you were a ghost, who or where would you haunt?",
-        "impostor": "What's the scariest ghost story you know?"
     }
 ]
