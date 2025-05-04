@@ -1,13 +1,5 @@
 [
     {
-        "official": "What's your favorite season and why?",
-        "impostor": "Describe your ideal weather."
-    },
-    {
-        "official": "Which superpower would you choose if you could have only one?",
-        "impostor": "If you were a supervillain, what would your main goal be?"
-    },
-    {
         "official": "What's the most relaxing activity you can think of?",
         "impostor": "What's the most exciting activity you can think of?"
     },
@@ -20,12 +12,12 @@
         "impostor": "What animal do you find the most intimidating?"
     },
     {
-        "official": "Which movie genre do you think is the most overrated?",
-        "impostor": "Which book genre do you wish was more popular?"
+        "official": "Which movie do you think is the most overrated?",
+        "impostor": "Which is your favourite movie?"
     },
     {
         "official": "What's your go-to comfort food?",
-        "impostor": "What's a food you absolutely cannot stand?"
+        "impostor": "What's something that you only eat because it is healthy?"
     },
     {
         "official": "How many hours of sleep do you ideally need per night?",
@@ -34,9 +26,5 @@
     {
         "official": "What's the best way to spend a rainy day?",
         "impostor": "What's the best way to spend a sunny day?"
-    },
-    {
-        "official": "Which historical period would you most like to visit?",
-        "impostor": "Which fictional world would you most like to live in?"
     }
 ]
