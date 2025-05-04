@@ -18,61 +18,71 @@
 
         <!-- Start Screen -->
         <div id="start-screen" class="screen active">
-            <h1>The Impostor Game</h1>
-            <p>Enter player names (one per line or comma-separated):</p>
-            <textarea id="player-names-input" rows="5" cols="30"></textarea>
-            <button id="start-game-button">Start Game</button>
+            <h1 data-translate="gameTitle">The Impostor Game</h1>
+            <div>
+                <label for="language-select" data-translate="languageLabel">Language:</label>
+                <select id="language-select">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="sv">Svenska</option>
+                </select>
+            </div>
+            <p data-translate="playerNamesPrompt">Enter player names (one per line or comma-separated):</p>
+            <textarea id="player-names-input" rows="5" cols="30" data-translate-placeholder="playerNamesPlaceholder" placeholder="Alice\nBob\nCharlie"></textarea>
+            <button id="start-game-button" data-translate="startGameButton">Start Game</button>
             <p id="start-error" class="error-message"></p>
         </div>
 
         <!-- Next Player Screen -->
         <div id="next-player-screen" class="screen">
-            <h2 id="next-player-message">Pass the device to PlayerName.</h2>
-            <button id="next-player-button">Show My Question / Start Voting</button>
+            <h2 id="next-player-message" data-translate-dynamic="passDevicePrompt">Pass the device to PlayerName.</h2>
+            <button id="next-player-button" data-translate-dynamic="nextPlayerButtonPrompt">Show My Question / Start Voting</button>
         </div>
 
         <!-- Question Screen -->
         <div id="question-screen" class="screen">
-            <h2>Question for <span id="question-player-name">PlayerName</span>:</h2>
+            <h2 data-translate-dynamic="questionPrompt">Question for <span id="question-player-name">PlayerName</span>:</h2>
             <p id="question-text">This is where the question will appear.</p>
-            <input type="text" id="answer-input" placeholder="Enter your answer">
-            <button id="submit-answer-button">Submit Answer</button>
+            <input type="text" id="answer-input" data-translate-placeholder="answerPlaceholder" placeholder="Enter your answer">
+            <button id="submit-answer-button" data-translate="submitAnswerButton">Submit Answer</button>
             <p id="answer-error" class="error-message"></p>
         </div>
 
         <!-- Discussion Screen -->
         <div id="discussion-screen" class="screen">
-            <h2>Discussion Time!</h2>
-            <p><strong>The Official Question Was:</strong></p>
+            <h2 data-translate="discussionTitle">Discussion Time!</h2>
+            <p><strong data-translate="officialQuestionLabel">The Official Question Was:</strong></p>
             <p id="discussion-question">The official question text.</p>
-            <p><strong>Answers Given:</strong></p>
+            <p><strong data-translate="answersGivenLabel">Answers Given:</strong></p>
             <ul id="discussion-answers">
                 <!-- Player names and answers will be listed here -->
             </ul>
-            <p>Discuss the answers and try to identify the Impostor.</p>
-            <button id="proceed-to-voting-button">Proceed to Voting</button>
+            <p data-translate="discussionInstructions">Discuss the answers and try to identify the Impostor.</p>
+            <button id="proceed-to-voting-button" data-translate="proceedToVotingButton">Proceed to Voting</button>
         </div>
 
         <!-- Voting Screen -->
         <div id="voting-screen" class="screen">
-            <h2 id="voting-prompt"><span id="voting-player-name">PlayerName</span>, who do you think is the Impostor?</h2>
+            <h2 id="voting-prompt" data-translate-dynamic="votingPrompt">PlayerName, who do you think is the Impostor?</h2>
             <div id="voting-options">
                 <!-- Voting buttons/radio inputs will go here -->
             </div>
-            <button id="submit-vote-button">Cast Vote</button>
+            <!-- Submit vote button is hidden, but keep attribute for potential future use -->
+            <button id="submit-vote-button" data-translate="castVoteButton" style="display: none;">Cast Vote</button>
              <p id="vote-error" class="error-message"></p>
         </div>
 
         <!-- Final Screen -->
         <div id="final-screen" class="screen">
-            <h2>Results</h2>
-            <p><strong>The Impostor was:</strong> <span id="impostor-reveal">ImpostorName</span></p>
-            <p><strong>Votes Received:</strong></p>
+            <h2 data-translate="resultsTitle">Results</h2>
+            <p><strong data-translate="impostorWasLabel">The Impostor was:</strong> <span id="impostor-reveal">ImpostorName</span></p>
+            <p><strong data-translate="votesReceivedLabel">Votes Received:</strong></p>
             <ul id="results-votes">
                 <!-- Vote counts per player -->
             </ul>
-            <h3 id="winner-message">Winner message goes here.</h3>
-            <button id="play-again-button">Play Again</button>
+            <h3 id="winner-message" data-translate-dynamic="winnerMessage">Winner message goes here.</h3>
+            <button id="play-again-button" data-translate="playAgainButton">Play Again</button>
         </div>
 
     </div>

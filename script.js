@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const playerNamesInput = document.getElementById('player-names-input');
     const startGameButton = document.getElementById('start-game-button');
     const startError = document.getElementById('start-error');
+    const languageSelect = document.getElementById('language-select');
 
     const nextPlayerMessage = document.getElementById('next-player-message');
     const nextPlayerButton = document.getElementById('next-player-button');
@@ -47,8 +48,191 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPlayerIndex = 0;
     let gameState = 'setup'; // 'setup', 'asking', 'discussing', 'voting', 'results'
     let currentVotes = {}; // { voterName: votedForName }
+    let currentLanguage = 'en'; // Default language
+
+    // --- Translations ---
+    // Using {playerName}, {impostorName}, {voterName}, {votedForName} as placeholders
+    const translations = {
+        en: {
+            gameTitle: "The Impostor Game",
+            languageLabel: "Language:",
+            playerNamesPrompt: "Enter player names (one per line or comma-separated):",
+            playerNamesPlaceholder: "Alice\nBob\nCharlie",
+            startGameButton: "Start Game",
+            startErrorPlayerCount: "You need at least 3 players.",
+            startErrorUniqueNames: "Player names must be unique.",
+            startErrorNoNames: "Please enter player names.",
+            startErrorNoQuestions: "No questions loaded. Cannot start game.",
+            startErrorLoadingQuestions: "Error loading questions. Please check the questions file and refresh.",
+            startErrorStillNoQuestions: "Still no questions loaded. Check questions file.",
+            passDevicePrompt: "Pass the device to {playerName}.",
+            nextPlayerButtonQuestion: "Show My Question",
+            nextPlayerButtonVote: "Start Voting",
+            questionPrompt: "Question for {playerName}:",
+            answerPlaceholder: "Enter your answer",
+            submitAnswerButton: "Submit Answer",
+            answerError: "Please enter an answer.",
+            discussionTitle: "Discussion Time!",
+            officialQuestionLabel: "The Official Question Was:",
+            answersGivenLabel: "Answers Given:",
+            discussionInstructions: "Discuss the answers and try to identify the Impostor.",
+            proceedToVotingButton: "Proceed to Voting",
+            votingPromptImpostor: "{playerName}, whom do you vote for?",
+            votingPromptDetective: "{playerName}, who do you think is the Impostor?",
+            castVoteButton: "Cast Vote", // Currently unused as button is hidden
+            voteError: "An error occurred. Please try voting again.", // Generic error
+            resultsTitle: "Results",
+            impostorWasLabel: "The Impostor was:",
+            votesReceivedLabel: "Votes Received:",
+            winnerDetectives: "The Detectives Win! They found the Impostor.",
+            winnerImpostor: "The Impostor Wins! They escaped detection.",
+            playAgainButton: "Play Again",
+            voteResultText: "{playerName}: {count} vote(s)"
+        },
+        fr: { // NOTE: THESE ARE PLACEHOLDERS - REPLACE WITH ACTUAL TRANSLATIONS
+            gameTitle: "Le Jeu de l'Imposteur",
+            languageLabel: "Langue :",
+            playerNamesPrompt: "Entrez les noms des joueurs (un par ligne ou séparés par des virgules) :",
+            playerNamesPlaceholder: "Alice\nBob\nCharlie",
+            startGameButton: "Commencer le jeu",
+            startErrorPlayerCount: "Il faut au moins 3 joueurs.",
+            startErrorUniqueNames: "Les noms des joueurs doivent être uniques.",
+            startErrorNoNames: "Veuillez entrer les noms des joueurs.",
+            startErrorNoQuestions: "Aucune question chargée. Impossible de démarrer le jeu.",
+            startErrorLoadingQuestions: "Erreur lors du chargement des questions. Veuillez vérifier le fichier questions et rafraîchir.",
+            startErrorStillNoQuestions: "Toujours aucune question chargée. Vérifiez le fichier questions.",
+            passDevicePrompt: "Passez l'appareil à {playerName}.",
+            nextPlayerButtonQuestion: "Afficher ma question",
+            nextPlayerButtonVote: "Commencer à voter",
+            questionPrompt: "Question pour {playerName} :",
+            answerPlaceholder: "Entrez votre réponse",
+            submitAnswerButton: "Soumettre la réponse",
+            answerError: "Veuillez entrer une réponse.",
+            discussionTitle: "Temps de discussion !",
+            officialQuestionLabel: "La question officielle était :",
+            answersGivenLabel: "Réponses données :",
+            discussionInstructions: "Discutez des réponses et essayez d'identifier l'Imposteur.",
+            proceedToVotingButton: "Passer au vote",
+            votingPromptImpostor: "{playerName}, pour qui votez-vous ?",
+            votingPromptDetective: "{playerName}, qui pensez-vous être l'Imposteur ?",
+            castVoteButton: "Voter",
+            voteError: "Une erreur s'est produite. Veuillez réessayer de voter.",
+            resultsTitle: "Résultats",
+            impostorWasLabel: "L'Imposteur était :",
+            votesReceivedLabel: "Votes reçus :",
+            winnerDetectives: "Les Détectives gagnent ! Ils ont trouvé l'Imposteur.",
+            winnerImpostor: "L'Imposteur gagne ! Il a échappé à la détection.",
+            playAgainButton: "Rejouer",
+            voteResultText: "{playerName} : {count} vote(s)"
+        },
+        de: { // NOTE: THESE ARE PLACEHOLDERS - REPLACE WITH ACTUAL TRANSLATIONS
+            gameTitle: "Das Hochstapler-Spiel",
+            languageLabel: "Sprache:",
+            playerNamesPrompt: "Spielernamen eingeben (einer pro Zeile oder durch Komma getrennt):",
+            playerNamesPlaceholder: "Alice\nBob\nCharlie",
+            startGameButton: "Spiel starten",
+            startErrorPlayerCount: "Sie benötigen mindestens 3 Spieler.",
+            startErrorUniqueNames: "Spielernamen müssen eindeutig sein.",
+            startErrorNoNames: "Bitte Spielernamen eingeben.",
+            startErrorNoQuestions: "Keine Fragen geladen. Spiel kann nicht gestartet werden.",
+            startErrorLoadingQuestions: "Fehler beim Laden der Fragen. Bitte überprüfen Sie die Fragendatei und aktualisieren Sie.",
+            startErrorStillNoQuestions: "Immer noch keine Fragen geladen. Überprüfen Sie die Fragendatei.",
+            passDevicePrompt: "Gib das Gerät an {playerName} weiter.",
+            nextPlayerButtonQuestion: "Meine Frage anzeigen",
+            nextPlayerButtonVote: "Abstimmung starten",
+            questionPrompt: "Frage für {playerName}:",
+            answerPlaceholder: "Gib deine Antwort ein",
+            submitAnswerButton: "Antwort absenden",
+            answerError: "Bitte gib eine Antwort ein.",
+            discussionTitle: "Diskussionszeit!",
+            officialQuestionLabel: "Die offizielle Frage war:",
+            answersGivenLabel: "Gegebene Antworten:",
+            discussionInstructions: "Diskutiert die Antworten und versucht, den Hochstapler zu identifizieren.",
+            proceedToVotingButton: "Zur Abstimmung übergehen",
+            votingPromptImpostor: "{playerName}, für wen stimmst du?",
+            votingPromptDetective: "{playerName}, wer ist deiner Meinung nach der Hochstapler?",
+            castVoteButton: "Stimme abgeben",
+            voteError: "Ein Fehler ist aufgetreten. Bitte versuchen Sie erneut abzustimmen.",
+            resultsTitle: "Ergebnisse",
+            impostorWasLabel: "Der Hochstapler war:",
+            votesReceivedLabel: "Erhaltene Stimmen:",
+            winnerDetectives: "Die Detektive gewinnen! Sie haben den Hochstapler gefunden.",
+            winnerImpostor: "Der Hochstapler gewinnt! Er ist der Entdeckung entkommen.",
+            playAgainButton: "Nochmal spielen",
+            voteResultText: "{playerName}: {count} Stimme(n)"
+        },
+        sv: { // NOTE: THESE ARE PLACEHOLDERS - REPLACE WITH ACTUAL TRANSLATIONS
+            gameTitle: "Impostor-Spelet",
+            languageLabel: "Språk:",
+            playerNamesPrompt: "Ange spelarnamn (ett per rad eller kommaseparerade):",
+            playerNamesPlaceholder: "Alice\nBob\nCharlie",
+            startGameButton: "Starta spel",
+            startErrorPlayerCount: "Du behöver minst 3 spelare.",
+            startErrorUniqueNames: "Spelarnamn måste vara unika.",
+            startErrorNoNames: "Ange spelarnamn.",
+            startErrorNoQuestions: "Inga frågor laddade. Kan inte starta spelet.",
+            startErrorLoadingQuestions: "Fel vid laddning av frågor. Kontrollera frågefilen och uppdatera.",
+            startErrorStillNoQuestions: "Fortfarande inga frågor laddade. Kontrollera frågefilen.",
+            passDevicePrompt: "Skicka enheten till {playerName}.",
+            nextPlayerButtonQuestion: "Visa min fråga",
+            nextPlayerButtonVote: "Starta röstning",
+            questionPrompt: "Fråga till {playerName}:",
+            answerPlaceholder: "Ange ditt svar",
+            submitAnswerButton: "Skicka svar",
+            answerError: "Ange ett svar.",
+            discussionTitle: "Diskussionstid!",
+            officialQuestionLabel: "Den officiella frågan var:",
+            answersGivenLabel: "Givna svar:",
+            discussionInstructions: "Diskutera svaren och försök identifiera Impostorn.",
+            proceedToVotingButton: "Gå till röstning",
+            votingPromptImpostor: "{playerName}, vem röstar du på?",
+            votingPromptDetective: "{playerName}, vem tror du är Impostorn?",
+            castVoteButton: "Rösta",
+            voteError: "Ett fel inträffade. Försök rösta igen.",
+            resultsTitle: "Resultat",
+            impostorWasLabel: "Impostorn var:",
+            votesReceivedLabel: "Mottagna röster:",
+            winnerDetectives: "Detektiverna vinner! De hittade Impostorn.",
+            winnerImpostor: "Impostorn vinner! Hen undkom upptäckt.",
+            playAgainButton: "Spela igen",
+            voteResultText: "{playerName}: {count} röst(er)"
+        }
+    };
+
 
     // --- Functions ---
+
+    // Utility function to get translation
+    function t(key, lang = currentLanguage, replacements = {}) {
+        let text = translations[lang]?.[key] || translations.en[key] || `Missing translation: ${key}`;
+        for (const placeholder in replacements) {
+            text = text.replace(`{${placeholder}}`, replacements[placeholder]);
+        }
+        return text;
+    }
+
+    // Update UI text based on selected language
+    function updateUIForLanguage(lang) {
+        currentLanguage = lang;
+        document.querySelectorAll('[data-translate]').forEach(el => {
+            const key = el.getAttribute('data-translate');
+            el.textContent = t(key, lang);
+        });
+         document.querySelectorAll('[data-translate-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-translate-placeholder');
+            el.placeholder = t(key, lang);
+        });
+        // Update dynamic text elements if needed (though most are updated contextually)
+        // Example: Update start error message if it's currently displayed
+        if (startError.textContent) {
+             // Re-trigger the error display logic if possible, or map existing error message back to a key
+             // This part might need refinement depending on how errors are handled.
+             // For now, we'll just clear it on language change.
+             startError.textContent = '';
+        }
+        // Reload questions for the new language
+        loadQuestions();
+    }
 
     // Utility to show/hide screens
     function showScreen(screenId) {
@@ -66,22 +250,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function loadQuestions() {
+        const lang = currentLanguage; // Use the currently selected language
+        const questionFile = `questions_${lang}.json`;
+        console.log(`Attempting to load questions from: ${questionFile}`);
         try {
-            const response = await fetch('questions.json');
+            // Add cache-busting query parameter to prevent stale files
+            const response = await fetch(`${questionFile}?v=${Date.now()}`);
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                 // Try falling back to English if the language file is not found
+                 if (lang !== 'en') {
+                    console.warn(`Questions file not found for language '${lang}'. Falling back to English.`);
+                    currentLanguage = 'en'; // Update state if falling back
+                    languageSelect.value = 'en'; // Update dropdown
+                    await loadQuestions(); // Recursively call with 'en'
+                    return; // Stop further execution for the original language attempt
+                 } else {
+                    throw new Error(`HTTP error! status: ${response.status} for ${questionFile}`);
+                 }
             }
             questions = await response.json();
             console.log("Questions loaded:", questions);
             if (!Array.isArray(questions) || questions.length === 0) {
-                 console.error("Loaded questions data is not a valid non-empty array.");
-                 startError.textContent = "Error: Could not load valid questions.";
+                 console.error("Loaded questions data is not a valid non-empty array from:", questionFile);
+                 startError.textContent = t('startErrorLoadingQuestions'); // Use translated error
                  questions = []; // Ensure it's an empty array if invalid
             }
         } catch (error) {
-            console.error("Failed to load questions:", error);
-            startError.textContent = "Error loading questions. Please check questions.json and refresh.";
-            questions = []; // Ensure it's an empty array on error
+            console.error(`Failed to load questions from ${questionFile}:`, error);
+            // Attempt fallback to English if not already English
+            if (lang !== 'en') {
+                 console.warn(`Error loading ${questionFile}. Falling back to English.`);
+                 currentLanguage = 'en';
+                 languageSelect.value = 'en';
+                 await loadQuestions(); // Retry with English
+            } else {
+                 startError.textContent = t('startErrorLoadingQuestions'); // Use translated error
+                 questions = []; // Ensure it's an empty array on error
+            }
         }
     }
 
@@ -90,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startError.textContent = ''; // Clear previous errors
         const namesRaw = playerNamesInput.value.trim();
         if (!namesRaw) {
-            startError.textContent = 'Please enter player names.';
+            startError.textContent = t('startErrorNoNames');
             return;
         }
 
@@ -98,23 +303,27 @@ document.addEventListener('DOMContentLoaded', () => {
         const potentialNames = namesRaw.split(/[\n,]/).map(name => name.trim()).filter(name => name);
 
         if (potentialNames.length < 3) {
-            startError.textContent = 'You need at least 3 players.';
+            startError.textContent = t('startErrorPlayerCount');
             return;
         }
 
         // Check for duplicate names
         const uniqueNames = new Set(potentialNames);
         if (uniqueNames.size !== potentialNames.length) {
-            startError.textContent = 'Player names must be unique.';
+            startError.textContent = t('startErrorUniqueNames');
             return;
         }
 
         if (questions.length === 0) {
-            startError.textContent = 'No questions loaded. Cannot start game.';
+            startError.textContent = t('startErrorNoQuestions');
             // Attempt to load again in case it failed silently before
             loadQuestions().then(() => {
-                if (questions.length > 0) startGame(); // Retry if load succeeds now
-                else startError.textContent = 'Still no questions loaded. Check questions.json.';
+                if (questions.length > 0) {
+                     startGame(); // Retry if load succeeds now
+                } else {
+                     // Ensure the error message reflects the final state after attempting reload
+                     startError.textContent = t('startErrorStillNoQuestions');
+                }
             });
             return;
         }
@@ -141,10 +350,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function promptNextPlayer() {
+        const currentPlayerName = players[currentPlayerIndex]?.name || ''; // Handle potential undefined player
+
         if (gameState === 'asking') {
             if (currentPlayerIndex < players.length) {
-                nextPlayerMessage.textContent = `Pass the device to ${players[currentPlayerIndex].name}.`;
-                nextPlayerButton.textContent = "Show My Question";
+                nextPlayerMessage.textContent = t('passDevicePrompt', currentLanguage, { playerName: currentPlayerName });
+                nextPlayerButton.textContent = t('nextPlayerButtonQuestion');
                 showScreen('nextPlayer');
             } else {
                 // All answers collected, move to discussion
@@ -153,8 +364,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else if (gameState === 'voting') {
              if (currentPlayerIndex < players.length) {
-                nextPlayerMessage.textContent = `Pass the device to ${players[currentPlayerIndex].name} for voting.`;
-                nextPlayerButton.textContent = "Start Voting";
+                nextPlayerMessage.textContent = t('passDevicePrompt', currentLanguage, { playerName: currentPlayerName }); // Re-use prompt
+                nextPlayerButton.textContent = t('nextPlayerButtonVote');
                 showScreen('nextPlayer');
             } else {
                 // All votes collected, move to results
@@ -176,7 +387,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showQuestion() {
         const currentPlayer = players[currentPlayerIndex];
-        questionPlayerName.textContent = currentPlayer.name;
+        // Update the dynamic part of the question prompt
+        const questionPromptElement = document.querySelector('[data-translate-dynamic="questionPrompt"]');
+        questionPromptElement.innerHTML = t('questionPrompt', currentLanguage, { playerName: '' }); // Set base text
+        questionPlayerName.textContent = currentPlayer.name; // Insert name into span
+
         questionText.textContent = currentPlayer.isImpostor ? currentQuestionPair.impostor : currentQuestionPair.official;
         answerInput.value = ''; // Clear previous answer
         answerError.textContent = ''; // Clear previous error
@@ -187,7 +402,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function submitAnswer() {
         const answer = answerInput.value.trim();
         if (!answer) {
-            answerError.textContent = 'Please enter an answer.';
+            answerError.textContent = t('answerError');
             return;
         }
         answerError.textContent = ''; // Clear error
@@ -222,15 +437,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showVotingOptions() {
         const currentPlayer = players[currentPlayerIndex];
-        // votingPlayerName.textContent = currentPlayer.name; // Name is set within the prompt now
+        // votingPlayerName.textContent = currentPlayer.name; // Span is no longer used directly here
         voteError.textContent = ''; // Clear previous error
 
-        // Set the voting prompt based on whether the player is the impostor
-        if (currentPlayer.isImpostor) {
-            votingPrompt.textContent = `${currentPlayer.name}, whom do you vote for?`;
-        } else {
-            votingPrompt.textContent = `${currentPlayer.name}, who do you think is the Impostor?`;
-        }
+        // Set the voting prompt using translations and dynamic replacement
+        const promptKey = currentPlayer.isImpostor ? 'votingPromptImpostor' : 'votingPromptDetective';
+        votingPrompt.textContent = t(promptKey, currentLanguage, { playerName: currentPlayer.name });
 
 
         votingOptionsDiv.innerHTML = ''; // Clear previous options
@@ -262,10 +474,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function submitVote() {
         // Vote is already recorded in showVotingOptions via button click
         // Check if a vote was actually recorded for the current player before proceeding
-        if (!currentVotes[players[currentPlayerIndex].name]) {
+        const currentPlayerName = players[currentPlayerIndex]?.name; // Safety check
+        if (!currentPlayerName || !currentVotes[currentPlayerName]) {
             // This case shouldn't happen with the current button logic, but good for safety
-            voteError.textContent = 'An error occurred. Please try voting again.';
-            console.error("SubmitVote called but no vote recorded for:", players[currentPlayerIndex].name);
+            voteError.textContent = t('voteError');
+            console.error("SubmitVote called but no vote recorded for:", currentPlayerName);
             return; // Stay on the voting screen or handle error appropriately
         }
         voteError.textContent = ''; // Clear error
@@ -300,7 +513,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let maxVotes = 0;
         sortedPlayers.forEach(player => {
             const li = document.createElement('li');
-            li.textContent = `${player.name}: ${player.votesReceived} vote(s)`;
+            // Use translation for vote count text
+            li.textContent = t('voteResultText', currentLanguage, { playerName: player.name, count: player.votesReceived });
             resultsVotesList.appendChild(li);
             if (player.votesReceived > maxVotes) {
                 maxVotes = player.votesReceived;
@@ -308,13 +522,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Determine winner
+        // Determine winner using translated messages
         if (impostor.votesReceived >= maxVotes && maxVotes > 0) {
              // Impostor got the most votes (or tied for most), Detectives win
              // Added maxVotes > 0 check to handle cases where no votes are cast correctly
-            winnerMessage.textContent = "The Detectives Win! They found the Impostor.";
+            winnerMessage.textContent = t('winnerDetectives');
         } else {
             // Impostor did not get the most votes, Impostor wins
-            winnerMessage.textContent = "The Impostor Wins! They escaped detection.";
+            winnerMessage.textContent = t('winnerImpostor');
         }
 
         showScreen('final');
@@ -331,7 +546,8 @@ document.addEventListener('DOMContentLoaded', () => {
         startError.textContent = '';
         answerError.textContent = '';
         voteError.textContent = '';
-        // Don't reload questions, just reset state
+        // Don't reload questions on reset, but ensure UI matches selected language
+        updateUIForLanguage(currentLanguage); // Re-apply translations to reset screen text
         showScreen('start');
     }
 
@@ -349,9 +565,14 @@ document.addEventListener('DOMContentLoaded', () => {
     proceedToVotingButton.addEventListener('click', startVoting);
     // submitVoteButton listener removed as voting happens on name click
     playAgainButton.addEventListener('click', resetGame);
+    languageSelect.addEventListener('change', (e) => {
+        updateUIForLanguage(e.target.value);
+    });
+
 
     // --- Initial Load ---
-    loadQuestions(); // Load questions when the script runs
+    // Set initial language based on dropdown default and load corresponding UI/questions
+    updateUIForLanguage(languageSelect.value);
     showScreen('start'); // Show the start screen initially
 
 });
