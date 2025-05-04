@@ -521,14 +521,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Determine winner
+        // Count how many players received the maximum number of votes
+        let playersWithMaxVotes = 0;
+        if (maxVotes > 0) {
+            sortedPlayers.forEach(player => {
+                if (player.votesReceived === maxVotes) {
+                    playersWithMaxVotes++;
+                }
+            });
+        }
+
         // Determine winner using translated messages
-        if (impostor.votesReceived >= maxVotes && maxVotes > 0) {
-             // Impostor got the most votes (or tied for most), Detectives win
-             // Added maxVotes > 0 check to handle cases where no votes are cast correctly
+        // Detectives win ONLY if the impostor received the unique maximum number of votes (and votes were cast)
+        if (maxVotes > 0 && impostor.votesReceived === maxVotes && playersWithMaxVotes === 1) {
             winnerMessage.textContent = t('winnerDetectives');
         } else {
-            // Impostor did not get the most votes, Impostor wins
+            // Impostor wins if they didn't get the most votes, or if they tied for the most votes, or if no votes were cast.
             winnerMessage.textContent = t('winnerImpostor');
         }
 
