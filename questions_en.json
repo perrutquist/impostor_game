@@ -26,5 +26,17 @@
     {
         "official": "What's the best way to spend a rainy day?",
         "impostor": "What's the best way to spend a sunny day?"
+    },
+    {
+        "official": "If you could have any superpower, what would it be?",
+        "impostor": "What's the most inconvenient superpower you can imagine?"
+    },
+    {
+        "official": "What's a common misconception about your job or hobby?",
+        "impostor": "What's a wildly inaccurate assumption someone has made about you?"
+    },
+    {
+        "official": "What fictional world would you most like to live in?",
+        "impostor": "What fictional world seems nice but would actually be terrifying to live in?"
     }
 ]
