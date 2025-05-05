@@ -98,6 +98,63 @@ li {
     min-height: 1.2em; /* Reserve space */
 }
 
+/* Styles for the Rules Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.visible {
+    display: flex; /* Show when active */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px 30px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    text-align: left; /* Align text left within modal */
+}
+
+.modal-content h2 {
+    text-align: center; /* Center the title */
+    margin-top: 0;
+}
+
+.modal-content p, .modal-content ul, .modal-content li {
+    text-align: left; /* Ensure lists/paragraphs are left-aligned */
+    color: #333;
+}
+.modal-content ul {
+    list-style: disc; /* Use standard bullets */
+    padding-left: 20px; /* Indent list */
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.modal-content button { /* Style for close button */
+    display: block; /* Make it block level */
+    margin: 15px auto 0 auto; /* Center the button */
+    background-color: #6c757d; /* Grey color */
+}
+.modal-content button:hover {
+    background-color: #5a6268;
+}
+
+
 #impostor-reveal {
     font-weight: bold;
     background-color: #ffdddd; /* Light red background for emphasis */

@@ -31,6 +31,7 @@
             <p data-translate="playerNamesPrompt">Enter player names (one per line or comma-separated):</p>
             <textarea id="player-names-input" rows="5" cols="30" data-translate-placeholder="playerNamesPlaceholder" placeholder="Alice\nBob\nCharlie"></textarea>
             <button id="start-game-button" data-translate="startGameButton">Start Game</button>
+            <button id="show-rules-button" data-translate="showRulesButton" style="margin-top: 15px; background-color: #6c757d;">Show Rules</button> <!-- Added Rules Button -->
             <p id="start-error" class="error-message"></p>
         </div>
 
@@ -83,6 +84,17 @@
             </ul>
             <h3 id="winner-message" data-translate-dynamic="winnerMessage">Winner message goes here.</h3>
             <button id="play-again-button" data-translate="playAgainButton">Play Again</button>
+        </div>
+
+        <!-- Rules Modal -->
+        <div id="rules-modal" class="modal">
+            <div class="modal-content">
+                <h2 data-translate="rulesTitle">Game Rules</h2>
+                <div id="rules-text-content">
+                    <!-- Rules content will be injected here by JS -->
+                </div>
+                <button id="close-rules-button" data-translate="closeRulesButton">Close</button>
+            </div>
         </div>
 
     </div>
