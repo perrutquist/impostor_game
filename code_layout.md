@@ -76,10 +76,6 @@
 
 ## Other remarks
 
-## Other remarks / Potential Improvements
-
-*   **Player Input:** Player name input handling (splitting, trimming, uniqueness check) is implemented.
-*   **Answer Randomization:** The order of answers in the discussion phase is currently based on the (shuffled) player order. Randomizing this display order could be considered.
 *   **Player Privacy:** The "Pass the device" screen helps maintain privacy during question/voting turns.
 *   **Code Structure:** For significantly larger features, refactoring into modules (e.g., UIManager, GameState) could improve maintainability.
 *   **Translations:** Storing translations in separate files (e.g., `translations_en.json`) instead of a large inline object could make management easier but requires changes to how they are loaded.
