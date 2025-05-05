@@ -472,7 +472,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Players cannot vote for themselves
             if (index !== currentPlayerIndex) {
                 const button = document.createElement('button');
-                button.textContent = player.name;
+                // Include the player's answer in the button text
+                button.textContent = `${player.name}: "${player.answer}"`;
                 button.dataset.voteIndex = index; // Store the index of the player being voted for
                 button.addEventListener('click', (e) => {
                      // Immediately record vote when button is clicked
