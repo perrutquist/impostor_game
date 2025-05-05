@@ -67,12 +67,8 @@
         "What's a place you've visited that you would never go back to?"
     ],
     [
-        "What's your favorite book and why?",
+        "What's your favorite book?",
         "What's a book you started but never finished?"
-    ],
-    [
-        "What's the most memorable concert you've attended?",
-        "What's a band or musician you wish you could see live?"
     ],
     [
         "What's your favorite holiday tradition?",
@@ -81,14 +77,6 @@
     [
         "What's the best gift you've ever received?",
         "What's a gift you regret giving?"
-    ],
-    [
-        "What's your favorite season and why?",
-        "What's a season you could live without?"
-    ],
-    [
-        "What's your favorite childhood memory?",
-        "What's a memory from childhood that makes you cringe?"
     ],
     [
         "What's your favorite way to exercise?",
@@ -109,10 +97,6 @@
     [
         "What's your favorite way to spend a weekend?",
         "What's a weekend activity you avoid?"
-    ],
-    [
-        "What's your favorite type of music?",
-        "What's a genre of music you can't stand?"
     ],
     [
         "What's your favorite way to relax?",
