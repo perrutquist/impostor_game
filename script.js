@@ -97,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
             winnerImpostor: "The Impostor Wins! They escaped detection.",
             playAgainButton: "Play Again",
             voteResultText: "{playerName}: {count} vote(s)",
-            // Rules specific translations
             showRulesButton: "Show Rules",
             rulesTitle: "Game Rules",
             closeRulesButton: "Close",
@@ -108,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p><strong>Winning:</strong> Detectives win if they find the Impostor. Impostor wins if not found.</p>
             `
         },
-        fr: { // NOTE: THESE ARE PLACEHOLDERS - REPLACE WITH ACTUAL TRANSLATIONS
+        fr: {
             gameTitle: "Le Jeu de l'Imposteur",
             languageLabel: "Langue :",
             playerNamesPrompt: "Entrez les noms des joueurs (un par ligne ou séparés par des virgules) :",
@@ -144,7 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
             winnerImpostor: "L'Imposteur gagne ! Il a échappé à la détection.",
             playAgainButton: "Rejouer",
             voteResultText: "{playerName} : {count} vote(s)",
-            // Rules specific translations (PLACEHOLDERS)
             showRulesButton: "Afficher les règles",
             rulesTitle: "Règles du jeu",
             closeRulesButton: "Fermer",
@@ -155,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p><strong>Gagner :</strong> Détectives gagnent s'ils trouvent l'Imposteur. Imposteur gagne s'il n'est pas trouvé.</p>
             `
         },
-        de: { // NOTE: THESE ARE PLACEHOLDERS - REPLACE WITH ACTUAL TRANSLATIONS
+        de: {
             gameTitle: "Das Hochstapler-Spiel",
             languageLabel: "Sprache:",
             playerNamesPrompt: "Spielernamen eingeben (einer pro Zeile oder durch Komma getrennt):",
@@ -191,7 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
             winnerImpostor: "Der Hochstapler gewinnt! Er ist der Entdeckung entkommen.",
             playAgainButton: "Nochmal spielen",
             voteResultText: "{playerName}: {count} Stimme(n)",
-            // Rules specific translations (PLACEHOLDERS)
             showRulesButton: "Regeln anzeigen",
             rulesTitle: "Spielregeln",
             closeRulesButton: "Schließen",
@@ -202,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p><strong>Gewinnen:</strong> Detektive gewinnen, wenn sie den Hochstapler finden. Hochstapler gewinnt, wenn nicht gefunden.</p>
             `
         },
-        sv: { // NOTE: THESE ARE PLACEHOLDERS - REPLACE WITH ACTUAL TRANSLATIONS
+        sv: {
             gameTitle: "Bedragare-Spelet",
             languageLabel: "Språk:",
             playerNamesPrompt: "Ange spelarnamn (ett per rad eller kommaseparerade):",
@@ -244,9 +241,9 @@ document.addEventListener('DOMContentLoaded', () => {
             closeRulesButton: "Stäng",
             rulesContent: `
                 <p><strong>Mål:</strong> Detektiver hittar Bedragaren, som försöker gömma sig.</p>
-                <p><strong>Inställningar:</strong> Ange spelarnamn (minst 3). En är Impostorn.</p>
-                <p><strong>Spelförlopp:</strong> Spelare får frågor. Diskutera svaren för att hitta Impostorn. Rösta.</p>
-                <p><strong>Att vinna:</strong> Detektiver vinner om de hittar Impostorn. Impostorn vinner om inte hittad.</p>
+                <p><strong>Inställningar:</strong> Ange spelarnamn (minst 3). En är Bedragaren.</p>
+                <p><strong>Spelförlopp:</strong> Spelare får frågor. Diskutera svaren för att hitta Bedragaren. Rösta.</p>
+                <p><strong>Att vinna:</strong> Detektiver vinner om de hittar Bedragaren. Bedragaren vinner om inte hittad.</p>
             `
         }
     };
@@ -685,9 +682,9 @@ document.addEventListener('DOMContentLoaded', () => {
         rulesModal.classList.add('visible');
     });
      
-    closeRulesButton.addEventListener('click', () => {                    
+    closeRulesButton.addEventListener('click', () => {
         rulesModal.classList.remove('visible');
-    });                     
+    });
 
     // Optional: Close modal if clicking outside the content area
     rulesModal.addEventListener('click', (event) => {
