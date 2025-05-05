@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             officialQuestionLabel: "The Question Was:",
             answersGivenLabel: "Answers Given:",
             discussionInstructions: "Discuss the answers and try to identify the Impostor.",
-            discussionNote: "If you did not get this question, then you are the impostor!"
+            discussionNote: "If you did not get this question, then you are the impostor!",
             proceedToVotingButton: "Proceed to Voting",
             votingPromptImpostor: "{playerName}, whom do you vote for?",
             votingPromptDetective: "{playerName}, who do you think is the Impostor?",
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
             officialQuestionLabel: "La question était :",
             answersGivenLabel: "Réponses données :",
             discussionInstructions: "Discutez des réponses et essayez d'identifier l'Imposteur.",
-            discussionNote: "Si vous n'avez pas eu cette question, alors vous êtes l'imposteur !"
+            discussionNote: "Si vous n'avez pas eu cette question, alors vous êtes l'imposteur !",
             proceedToVotingButton: "Passer au vote",
             votingPromptImpostor: "{playerName}, pour qui votez-vous ?",
             votingPromptDetective: "{playerName}, qui pensez-vous être l'Imposteur ?",
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
             officialQuestionLabel: "Die Frage war:",
             answersGivenLabel: "Gegebene Antworten:",
             discussionInstructions: "Diskutiert die Antworten und versucht, den Hochstapler zu identifizieren.",
-            discussionNote: "Wenn Sie diese Frage nicht erhalten haben, dann sind Sie der Hochstapler!"
+            discussionNote: "Wenn Sie diese Frage nicht erhalten haben, dann sind Sie der Hochstapler!",
             proceedToVotingButton: "Zur Abstimmung übergehen",
             votingPromptImpostor: "{playerName}, für wen stimmst du?",
             votingPromptDetective: "{playerName}, wer ist deiner Meinung nach der Hochstapler?",
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
             officialQuestionLabel: "Frågan var:",
             answersGivenLabel: "Givna svar:",
             discussionInstructions: "Diskutera svaren och försök identifiera Impostorn.",
-            discussionNote: "Om du inte fick denna fråga, då är du impostorn!"
+            discussionNote: "Om du inte fick denna fråga, då är du impostorn!",
             proceedToVotingButton: "Gå till röstning",
             votingPromptImpostor: "{playerName}, vem röstar du på?",
             votingPromptDetective: "{playerName}, vem tror du är Impostorn?",
