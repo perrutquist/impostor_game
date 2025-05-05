@@ -605,6 +605,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const li = document.createElement('li');
             // Use translation for vote count text
             li.textContent = t('voteResultText', { playerName: player.name, count: player.votesReceived });
+            if (player.isImpostor) {
+                li.style.backgroundColor = '#ffdddd'; // Apply the same background color as impostor reveal
+            }
             resultsVotesList.appendChild(li);
             if (player.votesReceived > maxVotes) {
                 maxVotes = player.votesReceived;
