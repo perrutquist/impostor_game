@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Game State ---
     let players = []; // { name: string, answer: string, votesReceived: number, isImpostor: boolean }
-    let questions = [];
-    let currentQuestionPair = null; // { official: string, impostor: string }
+    let questions = []; // Array of arrays of strings: [ ["q1a", "q1b"], ["q2a", "q2b", "q2c"], ... ]
+    let currentQuestionPair = null; // { official: string, impostor: string } - selected and assigned for the round
     let impostorIndex = -1;
     let currentPlayerIndex = 0;
     let gameState = 'setup'; // 'setup', 'asking', 'discussing', 'voting', 'results'
@@ -269,15 +269,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     throw new Error(`HTTP error! status: ${response.status} for ${questionFile}`);
                  }
             }
-            questions = await response.json();
-            console.log("Questions loaded:", questions);
-            if (!Array.isArray(questions) || questions.length === 0) {
-                 console.error("Loaded questions data is not a valid non-empty array from:", questionFile);
+            const rawQuestions = await response.json();
+            console.log("Raw questions data loaded:", rawQuestions);
+
+            // Validate the new structure: array of arrays, each inner array having at least 2 strings
+            if (!Array.isArray(rawQuestions) || rawQuestions.length === 0 || !rawQuestions.every(qSet => Array.isArray(qSet) && qSet.length >= 2 && qSet.every(q => typeof q === 'string'))) {
+                 console.error("Loaded questions data is not a valid array of arrays with at least two strings each from:", questionFile);
                  startError.textContent = t('startErrorLoadingQuestions'); // Use translated error
                  questions = []; // Ensure it's an empty array if invalid
+            } else {
+                questions = rawQuestions; // Assign validated questions
+                console.log("Validated questions stored:", questions);
             }
         } catch (error) {
-            console.error(`Failed to load questions from ${questionFile}:`, error);
+            console.error(`Failed to load or parse questions from ${questionFile}:`, error);
             // Attempt fallback to English if not already English
             if (lang !== 'en') {
                  console.warn(`Error loading ${questionFile}. Falling back to English.`);
@@ -333,8 +338,19 @@ document.addEventListener('DOMContentLoaded', () => {
         players = potentialNames.map(name => ({ name: name, answer: '', votesReceived: 0, isImpostor: false }));
         shuffleArray(players); // Randomize player order initially
 
-        // Select random question pair
-        currentQuestionPair = questions[Math.floor(Math.random() * questions.length)];
+        // Select a random set of questions (which is now an array of strings)
+        const selectedQuestionSet = questions[Math.floor(Math.random() * questions.length)];
+
+        // Shuffle the selected set to randomize which becomes official/impostor
+        const shuffledSet = [...selectedQuestionSet]; // Create a copy before shuffling
+        shuffleArray(shuffledSet);
+
+        // Assign the first two shuffled questions to the official/impostor roles for this round
+        // Assumes validation in loadQuestions ensured each set has at least 2 questions
+        currentQuestionPair = {
+            official: shuffledSet[0],
+            impostor: shuffledSet[1]
+        };
 
         // Select random impostor
         impostorIndex = Math.floor(Math.random() * players.length);

@@ -1,10 +1,10 @@
 [
-    {
-        "official": "Si tu pouvais avoir un super-pouvoir, lequel serait-ce ?",
-        "impostor": "Quel est le super-pouvoir le plus gênant que tu puisses imaginer ?"
-    },
-    {
-        "official": "Dans quel monde fictif aimerais-tu le plus vivre ?",
-        "impostor": "Quel monde fictif semble agréable mais serait en fait terrifiant à vivre ?"
-    }
+    [
+        "Si tu pouvais avoir un super-pouvoir, lequel serait-ce ?",
+        "Quel est le super-pouvoir le plus gênant que tu puisses imaginer ?"
+    ],
+    [
+        "Dans quel monde fictif aimerais-tu le plus vivre ?",
+        "Quel monde fictif semble agréable mais serait en fait terrifiant à vivre ?"
+    ]
 ]

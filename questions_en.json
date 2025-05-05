@@ -1,58 +1,71 @@
 [
-    {
-        "official": "What's the most relaxing activity you can think of?",
-        "impostor": "What's the most exciting activity you can think of?"
-    },
-    {
-        "official": "If you could instantly become an expert in one skill, what would it be?",
-        "impostor": "What's a skill you admire in others but have no interest in learning yourself?"
-    },
-    {
-        "official": "What animal best represents your personality?",
-        "impostor": "What animal do you find the most intimidating?"
-    },
-    {
-        "official": "Which movie do you think is the most overrated?",
-        "impostor": "Which is your favourite movie?"
-    },
-    {
-        "official": "What's your go-to comfort food?",
-        "impostor": "What's something that you only eat because it is healthy?"
-    },
-    {
-        "official": "How many hours of sleep do you ideally need per night?",
-        "impostor": "Give a number between 5 and 10."
-    },
-    {
-        "official": "What's the best way to spend a rainy day?",
-        "impostor": "What's the best way to spend a sunny day?"
-    },
-    {
-        "official": "If you could have any superpower, what would it be?",
-        "impostor": "What's the most inconvenient superpower you can imagine?"
-    },
-    {
-        "official": "What fictional world would you most like to live in?",
-        "impostor": "What fictional world seems nice but would actually be terrifying to live in?"
-    },
-    {
-        "official": "If you had to eat one type of meal for the rest of your life, what would it be?",
-        "impostor": "What did you have for breakfast this morning?"
-    },
-    {
-        "official": "What's the most useful thing you own?",
-        "impostor": "What's something you own that you probably should get rid of?"
-    },
-    {
-        "official": "What's a simple pleasure you enjoy?",
-        "impostor": "What's a necessary chore you dislike?"
-    },
-    {
-        "official": "What topic could you give a 30-minute presentation on with no preparation?",
-        "impostor": "What topic do you know absolutely nothing about?"
-    },
-    {
-        "official": "What's the best piece of advice you've ever received?",
-        "impostor": "What's the worst piece of advice you've ever followed?"
-    }
+    [
+        "What's the most relaxing activity you can think of?",
+        "What's the most exciting activity you can think of?",
+        "What activity makes you feel most alive?"
+    ],
+    [
+        "If you could instantly become an expert in one skill, what would it be?",
+        "What's a skill you admire in others but have no interest in learning yourself?",
+        "What skill do you wish you had learned earlier?"
+    ],
+    [
+        "What animal best represents your personality?",
+        "What animal do you find the most intimidating?",
+        "What animal would you least like to be?"
+    ],
+    [
+        "Which movie do you think is the most overrated?",
+        "Which is your favourite movie?",
+        "What movie have you watched the most times?"
+    ],
+    [
+        "What's your go-to comfort food?",
+        "What's something that you only eat because it is healthy?",
+        "What food do you secretly dislike but pretend to enjoy?"
+    ],
+    [
+        "How many hours of sleep do you ideally need per night?",
+        "Give a number between 5 and 10."
+    ],
+    [
+        "What's the best way to spend a rainy day?",
+        "What's the best way to spend a sunny day?",
+        "What's your ideal weather?"
+    ],
+    [
+        "If you could have any superpower, what would it be?",
+        "What's the most inconvenient superpower you can imagine?",
+        "If you could grant someone else a superpower, what would it be?"
+    ],
+    [
+        "What fictional world would you most like to live in?",
+        "What fictional world seems nice but would actually be terrifying to live in?",
+        "What fictional world would be the most boring to live in?"
+    ],
+    [
+        "If you had to eat one type of meal for the rest of your life, what would it be?",
+        "What did you have for breakfast this morning?",
+        "What's a food you could eat every day and not get tired of?"
+    ],
+    [
+        "What's the most useful thing you own?",
+        "What's something you own that you probably should get rid of?",
+        "What's the most sentimental item you own?"
+    ],
+    [
+        "What's a simple pleasure you enjoy?",
+        "What's a necessary chore you dislike?",
+        "What small thing brightens your day?"
+    ],
+    [
+        "What topic could you give a 30-minute presentation on with no preparation?",
+        "What topic do you know absolutely nothing about?",
+        "What topic do you wish you knew more about?"
+    ],
+    [
+        "What's the best piece of advice you've ever received?",
+        "What's the worst piece of advice you've ever followed?",
+        "What's a piece of advice you often give to others?"
+    ]
 ]

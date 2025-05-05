@@ -1,10 +1,10 @@
 [
-    {
-        "official": "Vad är det mest användbara du äger?",
-        "impostor": "Vad äger du som du förmodligen borde göra dig av med?"
-    },
-    {
-        "official": "Vilket ämne skulle du kunna hålla en 30-minuters presentation om utan förberedelser?",
-        "impostor": "Vilket ämne vet du absolut ingenting om?"
-    }
+    [
+        "Vad är det mest användbara du äger?",
+        "Vad äger du som du förmodligen borde göra dig av med?"
+    ],
+    [
+        "Vilket ämne skulle du kunna hålla en 30-minuters presentation om utan förberedelser?",
+        "Vilket ämne vet du absolut ingenting om?"
+    ]
 ]

@@ -1,10 +1,10 @@
 [
-    {
-        "official": "Wenn du sofort Experte in einer Fähigkeit werden könntest, welche wäre das?",
-        "impostor": "Welche Fähigkeit bewunderst du bei anderen, hast aber kein Interesse daran, sie selbst zu lernen?"
-    },
-    {
-        "official": "Welches Tier repräsentiert deine Persönlichkeit am besten?",
-        "impostor": "Welches Tier findest du am einschüchterndsten?"
-    }
+    [
+        "Wenn du sofort Experte in einer Fähigkeit werden könntest, welche wäre das?",
+        "Welche Fähigkeit bewunderst du bei anderen, hast aber kein Interesse daran, sie selbst zu lernen?"
+    ],
+    [
+        "Welches Tier repräsentiert deine Persönlichkeit am besten?",
+        "Welches Tier findest du am einschüchterndsten?"
+    ]
 ]

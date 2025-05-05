@@ -5,7 +5,7 @@
 *   `index.html`: Main HTML file containing the structure for all game screens.
 *   `style.css`: CSS for styling the elements and managing screen visibility.
 *   `script.js`: JavaScript file containing the game logic.
-*   `questions_xx.json`: JSON files storing pairs of questions (official question and impostor question) for different languages (e.g., `questions_en.json`, `questions_fr.json`).
+*   `questions_xx.json`: JSON files storing lists of similar questions for different languages (e.g., `questions_en.json`, `questions_fr.json`). Each entry is an array of 2+ question strings.
 
 ## App Screens (Managed via showing/hiding divs)
 
@@ -45,8 +45,8 @@
 ## Game State (JavaScript Variables within `script.js` IIFE scope)
 
 *   `players`: Array of player objects, e.g., `[{ name: "Alice", answer: "", votesReceived: 0, isImpostor: false }, ...]`.
-*   `questions`: Array loaded from the current language's JSON file (e.g., `questions_en.json`).
-*   `currentQuestionPair`: The selected pair for the round `{ official: "...", impostor: "..." }`.
+*   `questions`: Array of arrays of strings, loaded from the current language's JSON file (e.g., `[ ["q1a", "q1b"], ["q2a", "q2b", "q2c"], ... ]`).
+*   `currentQuestionPair`: An object `{ official: "...", impostor: "..." }` assigned for the current round. These are randomly selected and assigned from one of the question arrays in `questions`.
 *   `impostorIndex`: Index of the player in the `players` array who is the impostor.
 *   `currentPlayerIndex`: Index of the player whose turn it is (used for both asking questions and casting votes).
 *   `gameState`: String indicating the current phase ('setup', 'asking', 'discussing', 'voting', 'results').
@@ -60,8 +60,8 @@
 *   `updateUIForLanguage(lang)`: Updates all static UI text elements based on the selected language and reloads questions.
 *   `showScreen(screenId)`: Hides all screen divs and shows the one with the specified ID.
 *   `shuffleArray(array)`: Shuffles an array in place using Fisher-Yates algorithm.
-*   `loadQuestions()`: Asynchronously fetches and parses questions from the JSON file corresponding to `currentLanguage`, with fallback to English.
-*   `startGame()`: Validates player names, initializes `players` array, shuffles players, selects question pair, assigns impostor, and transitions to the first 'asking' phase 'Next Player' screen.
+*   `loadQuestions()`: Asynchronously fetches and parses questions (now arrays of strings) from the JSON file corresponding to `currentLanguage`, validates the structure, with fallback to English.
+*   `startGame()`: Validates player names, initializes `players` array, shuffles players, selects a question set (array), shuffles it, assigns the first two questions as the round's `official` and `impostor` questions in `currentQuestionPair`, assigns impostor player, and transitions to the first 'asking' phase 'Next Player' screen.
 *   `promptNextPlayer()`: Shows the 'Next Player' screen, adapting the message and button text based on whether the game is in the 'asking' or 'voting' phase. Transitions to 'Discussion' or 'Results' if all players have had their turn.
 *   `handleNextPlayerButton()`: Event handler for the button on the 'Next Player' screen; calls either `showQuestion()` or `showVotingOptions()` based on `gameState`.
 *   `showQuestion()`: Displays the 'Question' screen with the appropriate question (official or impostor) for the `currentPlayerIndex`.
