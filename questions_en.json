@@ -57,5 +57,85 @@
     [
         "What's the best piece of advice you've ever received?",
         "What's the worst piece of advice you've ever followed?"
+    ],
+    [
+        "What's your favorite way to unwind after a long day?",
+        "What's something you do to energize yourself in the morning?"
+    ],
+    [
+        "If you could travel anywhere in the world, where would you go?",
+        "What's a place you've visited that you would never go back to?"
+    ],
+    [
+        "What's your favorite book and why?",
+        "What's a book you started but never finished?"
+    ],
+    [
+        "What's the most memorable concert you've attended?",
+        "What's a band or musician you wish you could see live?"
+    ],
+    [
+        "What's your favorite holiday tradition?",
+        "What's a holiday you don't celebrate but find interesting?"
+    ],
+    [
+        "What's the best gift you've ever received?",
+        "What's a gift you regret giving?"
+    ],
+    [
+        "What's your favorite season and why?",
+        "What's a season you could live without?"
+    ],
+    [
+        "What's your favorite childhood memory?",
+        "What's a memory from childhood that makes you cringe?"
+    ],
+    [
+        "What's your favorite way to exercise?",
+        "What's an exercise you avoid at all costs?"
+    ],
+    [
+        "What's your favorite type of weather?",
+        "What's the worst weather you've ever experienced?"
+    ],
+    [
+        "What's your favorite type of art?",
+        "What's a type of art you don't understand?"
+    ],
+    [
+        "What's your favorite thing to cook?",
+        "What's a dish you wish you could make perfectly?"
+    ],
+    [
+        "What's your favorite way to spend a weekend?",
+        "What's a weekend activity you avoid?"
+    ],
+    [
+        "What's your favorite type of music?",
+        "What's a genre of music you can't stand?"
+    ],
+    [
+        "What's your favorite way to relax?",
+        "What's something you find relaxing that others might not?"
+    ],
+    [
+        "What's your favorite type of movie?",
+        "What's a movie genre you rarely watch?"
+    ],
+    [
+        "What's your favorite way to spend time with friends?",
+        "What's a social activity you prefer to do alone?"
+    ],
+    [
+        "What's your favorite type of dessert?",
+        "What's a dessert you don't like?"
+    ],
+    [
+        "What's your favorite way to celebrate a special occasion?",
+        "What's a celebration you find overrated?"
+    ],
+    [
+        "What's your favorite way to learn something new?",
+        "What's a learning method that doesn't work for you?"
     ]
 ]
