@@ -1,58 +1,10 @@
 [
     {
-        "official": "Vilken är den mest avkopplande aktiviteten du kan tänka dig?",
-        "impostor": "Vilken är den mest spännande aktiviteten du kan tänka dig?"
-    },
-    {
-        "official": "Om du omedelbart kunde bli expert på en färdighet, vilken skulle det vara?",
-        "impostor": "Vilken färdighet beundrar du hos andra men har inget intresse av att lära dig själv?"
-    },
-    {
-        "official": "Vilket djur representerar bäst din personlighet?",
-        "impostor": "Vilket djur tycker du är mest skrämmande?"
-    },
-    {
-        "official": "Vilken film tycker du är mest överskattad?",
-        "impostor": "Vilken är din favoritfilm?"
-    },
-    {
-        "official": "Vad är din go-to tröstmat?",
-        "impostor": "Vad äter du bara för att det är hälsosamt?"
-    },
-    {
-        "official": "Hur många timmars sömn behöver du helst per natt?",
-        "impostor": "Ange ett nummer mellan 5 och 10."
-    },
-    {
-        "official": "Vad är det bästa sättet att tillbringa en regnig dag?",
-        "impostor": "Vad är det bästa sättet att tillbringa en solig dag?"
-    },
-    {
-        "official": "Om du kunde ha vilken superkraft som helst, vilken skulle det vara?",
-        "impostor": "Vilken är den mest opraktiska superkraften du kan föreställa dig?"
-    },
-    {
-        "official": "Vilken fiktiv värld skulle du helst vilja leva i?",
-        "impostor": "Vilken fiktiv värld verkar trevlig men skulle faktiskt vara skrämmande att leva i?"
-    },
-    {
-        "official": "Om du var tvungen att äta en typ av måltid resten av livet, vad skulle det vara?",
-        "impostor": "Vad åt du till frukost i morse?"
-    },
-    {
         "official": "Vad är det mest användbara du äger?",
         "impostor": "Vad äger du som du förmodligen borde göra dig av med?"
     },
     {
-        "official": "Vilken enkel njutning uppskattar du?",
-        "impostor": "Vilken nödvändig syssla ogillar du?"
-    },
-    {
         "official": "Vilket ämne skulle du kunna hålla en 30-minuters presentation om utan förberedelser?",
         "impostor": "Vilket ämne vet du absolut ingenting om?"
-    },
-    {
-        "official": "Vilket är det bästa rådet du någonsin har fått?",
-        "impostor": "Vilket är det sämsta rådet du någonsin har följt?"
     }
 ]

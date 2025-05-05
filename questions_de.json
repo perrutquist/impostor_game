@@ -1,58 +1,10 @@
 [
     {
-        "official": "Was ist die entspannendste Aktivität, die dir einfällt?",
-        "impostor": "Was ist die aufregendste Aktivität, die dir einfällt?"
-    },
-    {
         "official": "Wenn du sofort Experte in einer Fähigkeit werden könntest, welche wäre das?",
         "impostor": "Welche Fähigkeit bewunderst du bei anderen, hast aber kein Interesse daran, sie selbst zu lernen?"
     },
     {
         "official": "Welches Tier repräsentiert deine Persönlichkeit am besten?",
         "impostor": "Welches Tier findest du am einschüchterndsten?"
-    },
-    {
-        "official": "Welchen Film hältst du für am meisten überbewertet?",
-        "impostor": "Welcher ist dein Lieblingsfilm?"
-    },
-    {
-        "official": "Was ist dein Lieblings-Comfort-Food?",
-        "impostor": "Was isst du nur, weil es gesund ist?"
-    },
-    {
-        "official": "Wie viele Stunden Schlaf brauchst du idealerweise pro Nacht?",
-        "impostor": "Nenne eine Zahl zwischen 5 und 10."
-    },
-    {
-        "official": "Was ist der beste Weg, einen regnerischen Tag zu verbringen?",
-        "impostor": "Was ist der beste Weg, einen sonnigen Tag zu verbringen?"
-    },
-    {
-        "official": "Wenn du eine Superkraft haben könntest, welche wäre das?",
-        "impostor": "Was ist die unpraktischste Superkraft, die du dir vorstellen kannst?"
-    },
-    {
-        "official": "In welcher fiktiven Welt würdest du am liebsten leben?",
-        "impostor": "Welche fiktive Welt scheint nett zu sein, wäre aber tatsächlich erschreckend, darin zu leben?"
-    },
-    {
-        "official": "Wenn du für den Rest deines Lebens nur eine Art von Mahlzeit essen müsstest, welche wäre das?",
-        "impostor": "Was hast du heute Morgen gefrühstückt?"
-    },
-    {
-        "official": "Was ist das Nützlichste, das du besitzt?",
-        "impostor": "Was besitzt du, das du wahrscheinlich wegwerfen solltest?"
-    },
-    {
-        "official": "Welche einfache Freude genießt du?",
-        "impostor": "Welche notwendige Hausarbeit magst du nicht?"
-    },
-    {
-        "official": "Über welches Thema könntest du ohne Vorbereitung eine 30-minütige Präsentation halten?",
-        "impostor": "Über welches Thema weißt du absolut nichts?"
-    },
-    {
-        "official": "Was ist der beste Ratschlag, den du je erhalten hast?",
-        "impostor": "Was ist der schlechteste Ratschlag, den du je befolgt hast?"
     }
 ]
