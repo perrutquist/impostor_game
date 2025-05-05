@@ -418,8 +418,13 @@ document.addEventListener('DOMContentLoaded', () => {
         discussionQuestion.textContent = currentQuestionPair.official;
 
         discussionAnswersList.innerHTML = ''; // Clear previous list
-        // Display each player's name and answer
-        players.forEach(player => {
+
+        // Create a shuffled copy of players to randomize answer display order
+        const shuffledPlayers = [...players];
+        shuffleArray(shuffledPlayers); // Use the existing shuffle function
+
+        // Display each player's name and answer in shuffled order
+        shuffledPlayers.forEach(player => {
             const li = document.createElement('li');
             li.textContent = `${player.name}: ${player.answer}`; // Show name and answer
             discussionAnswersList.appendChild(li);
