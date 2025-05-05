@@ -101,30 +101,10 @@ document.addEventListener('DOMContentLoaded', () => {
             rulesTitle: "Game Rules",
             closeRulesButton: "Close",
             rulesContent: `
-                <p><strong>Objective:</strong></p>
-                <ul>
-                    <li><strong>Detectives:</strong> Identify the Impostor.</li>
-                    <li><strong>Impostor:</strong> Avoid being identified.</li>
-                </ul>
-                <p><strong>Setup:</strong></p>
-                <ul>
-                    <li>Enter the names of all players (minimum 3).</li>
-                    <li>The game randomly assigns one player as the Impostor.</li>
-                    <li>A pair of related questions is chosen: one for the Detectives (Official Question) and one slightly different for the Impostor (Impostor Question).</li>
-                </ul>
-                <p><strong>Gameplay:</strong></p>
-                <ol>
-                    <li><strong>Questions:</strong> Each player is secretly shown their question (Detectives see the Official Question, the Impostor sees the Impostor Question).</li>
-                    <li><strong>Answers:</strong> Each player provides a short answer based on their question.</li>
-                    <li><strong>Discussion:</strong> All answers are revealed (without revealing who gave which answer initially, though the discussion screen currently shows names). Players discuss the answers, trying to figure out who might have received a different question (the Impostor). The official question is revealed.</li>
-                    <li><strong>Voting:</strong> Each player votes for who they think the Impostor is. Players cannot vote for themselves.</li>
-                    <li><strong>Reveal:</strong> Votes are tallied. The player with the most votes is accused. The true Impostor is revealed.</li>
-                </ol>
-                <p><strong>Winning:</strong></p>
-                <ul>
-                    <li>The <strong>Detectives win</strong> if the Impostor receives the most votes (and it's not a tie for the most votes).</li>
-                    <li>The <strong>Impostor wins</strong> if they do not receive the most votes, or if they tie for the most votes.</li>
-                </ul>
+                <p><strong>Objective:</strong> Detectives find the Impostor, who tries to stay hidden.</p>
+                <p><strong>Setup:</strong> Enter player names (min 3). One is randomly the Impostor.</p>
+                <p><strong>Gameplay:</strong> Players get questions. Discuss answers to find the Impostor. Vote on who it is.</p>
+                <p><strong>Winning:</strong> Detectives win if they find the Impostor. Impostor wins if not found.</p>
             `
         },
         fr: { // NOTE: THESE ARE PLACEHOLDERS - REPLACE WITH ACTUAL TRANSLATIONS
@@ -167,30 +147,10 @@ document.addEventListener('DOMContentLoaded', () => {
             rulesTitle: "Règles du jeu",
             closeRulesButton: "Fermer",
             rulesContent: `
-                <p><strong>Objectif :</strong></p>
-                <ul>
-                    <li><strong>Détectives :</strong> Identifier l'Imposteur.</li>
-                    <li><strong>Imposteur :</strong> Éviter d'être identifié.</li>
-                </ul>
-                <p><strong>Mise en place :</strong></p>
-                <ul>
-                    <li>Entrez les noms de tous les joueurs (minimum 3).</li>
-                    <li>Le jeu désigne aléatoirement un joueur comme Imposteur.</li>
-                    <li>Une paire de questions liées est choisie : une pour les Détectives (Question Officielle) et une légèrement différente pour l'Imposteur (Question Imposteur).</li>
-                </ul>
-                <p><strong>Déroulement du jeu :</strong></p>
-                <ol>
-                    <li><strong>Questions :</strong> Chaque joueur voit secrètement sa question (les Détectives voient la Question Officielle, l'Imposteur voit la Question Imposteur).</li>
-                    <li><strong>Réponses :</strong> Chaque joueur donne une réponse courte basée sur sa question.</li>
-                    <li><strong>Discussion :</strong> Toutes les réponses sont révélées. Les joueurs discutent des réponses, essayant de deviner qui aurait pu recevoir une question différente (l'Imposteur). La question officielle est révélée.</li>
-                    <li><strong>Vote :</strong> Chaque joueur vote pour celui qu'il pense être l'Imposteur. Les joueurs ne peuvent pas voter pour eux-mêmes.</li>
-                    <li><strong>Révélation :</strong> Les votes sont comptés. Le joueur avec le plus de votes est accusé. Le véritable Imposteur est révélé.</li>
-                </ol>
-                <p><strong>Gagner :</strong></p>
-                <ul>
-                    <li>Les <strong>Détectives gagnent</strong> si l'Imposteur reçoit le plus de votes (et qu'il n'y a pas d'égalité pour le plus grand nombre de votes).</li>
-                    <li>L'<strong>Imposteur gagne</strong> s'il ne reçoit pas le plus de votes, ou s'il est à égalité pour le plus grand nombre de votes.</li>
-                </ul>
+                <p><strong>Objectif :</strong> Détectives trouvent l'Imposteur, qui essaie de rester caché.</p>
+                <p><strong>Mise en place :</strong> Entrez les noms des joueurs (min 3). Un est l'Imposteur.</p>
+                <p><strong>Déroulement :</strong> Les joueurs reçoivent des questions. Discutez des réponses pour trouver l'Imposteur. Votez.</p>
+                <p><strong>Gagner :</strong> Détectives gagnent s'ils trouvent l'Imposteur. Imposteur gagne s'il n'est pas trouvé.</p>
             `
         },
         de: { // NOTE: THESE ARE PLACEHOLDERS - REPLACE WITH ACTUAL TRANSLATIONS
@@ -233,30 +193,10 @@ document.addEventListener('DOMContentLoaded', () => {
             rulesTitle: "Spielregeln",
             closeRulesButton: "Schließen",
             rulesContent: `
-                <p><strong>Ziel:</strong></p>
-                <ul>
-                    <li><strong>Detektive:</strong> Identifiziert den Hochstapler.</li>
-                    <li><strong>Hochstapler:</strong> Vermeide es, identifiziert zu werden.</li>
-                </ul>
-                <p><strong>Setup:</strong></p>
-                <ul>
-                    <li>Gebt die Namen aller Spieler ein (mindestens 3).</li>
-                    <li>Das Spiel wählt zufällig einen Spieler als Hochstapler aus.</li>
-                    <li>Ein Paar verwandter Fragen wird ausgewählt: eine für die Detektive (Offizielle Frage) und eine leicht abweichende für den Hochstapler (Hochstapler-Frage).</li>
-                </ul>
-                <p><strong>Spielablauf:</strong></p>
-                <ol>
-                    <li><strong>Fragen:</strong> Jedem Spieler wird heimlich seine Frage gezeigt (Detektive sehen die Offizielle Frage, der Hochstapler sieht die Hochstapler-Frage).</li>
-                    <li><strong>Antworten:</strong> Jeder Spieler gibt eine kurze Antwort basierend auf seiner Frage.</li>
-                    <li><strong>Diskussion:</strong> Alle Antworten werden aufgedeckt. Die Spieler diskutieren die Antworten und versuchen herauszufinden, wer eine andere Frage erhalten haben könnte (der Hochstapler). Die offizielle Frage wird enthüllt.</li>
-                    <li><strong>Abstimmung:</strong> Jeder Spieler stimmt darüber ab, wer seiner Meinung nach der Hochstapler ist. Spieler können nicht für sich selbst stimmen.</li>
-                    <li><strong>Enthüllung:</strong> Die Stimmen werden ausgezählt. Der Spieler mit den meisten Stimmen wird beschuldigt. Der wahre Hochstapler wird enthüllt.</li>
-                </ol>
-                <p><strong>Gewinnen:</strong></p>
-                <ul>
-                    <li>Die <strong>Detektive gewinnen</strong>, wenn der Hochstapler die meisten Stimmen erhält (und es kein Unentschieden bei den meisten Stimmen gibt).</li>
-                    <li>Der <strong>Hochstapler gewinnt</strong>, wenn er nicht die meisten Stimmen erhält oder wenn er die meisten Stimmen teilt.</li>
-                </ul>
+                <p><strong>Ziel:</strong> Detektive finden den Hochstapler, der sich versteckt.</p>
+                <p><strong>Setup:</strong> Gebt die Namen der Spieler ein (min 3). Einer ist der Hochstapler.</p>
+                <p><strong>Spielablauf:</strong> Spieler bekommen Fragen. Diskutiert die Antworten, um den Hochstapler zu finden. Abstimmen.</p>
+                <p><strong>Gewinnen:</strong> Detektive gewinnen, wenn sie den Hochstapler finden. Hochstapler gewinnt, wenn nicht gefunden.</p>
             `
         },
         sv: { // NOTE: THESE ARE PLACEHOLDERS - REPLACE WITH ACTUAL TRANSLATIONS
@@ -299,30 +239,10 @@ document.addEventListener('DOMContentLoaded', () => {
             rulesTitle: "Spelregler",
             closeRulesButton: "Stäng",
             rulesContent: `
-                <p><strong>Mål:</strong></p>
-                <ul>
-                    <li><strong>Detektiver:</strong> Identifiera Impostorn.</li>
-                    <li><strong>Impostor:</strong> Undvik att bli identifierad.</li>
-                </ul>
-                <p><strong>Inställningar:</strong></p>
-                <ul>
-                    <li>Ange namnen på alla spelare (minst 3).</li>
-                    <li>Spelet utser slumpmässigt en spelare till Impostor.</li>
-                    <li>Ett par relaterade frågor väljs: en för Detektiverna (Officiell Fråga) och en något annorlunda för Impostorn (Impostor-Fråga).</li>
-                </ul>
-                <p><strong>Spelförlopp:</strong></p>
-                <ol>
-                    <li><strong>Frågor:</strong> Varje spelare får i hemlighet se sin fråga (Detektiver ser den Officiella Frågan, Impostorn ser Impostor-Frågan).</li>
-                    <li><strong>Svar:</strong> Varje spelare ger ett kort svar baserat på sin fråga.</li>
-                    <li><strong>Diskussion:</strong> Alla svar avslöjas. Spelarna diskuterar svaren och försöker lista ut vem som kan ha fått en annan fråga (Impostorn). Den officiella frågan avslöjas.</li>
-                    <li><strong>Röstning:</strong> Varje spelare röstar på vem de tror är Impostorn. Spelare kan inte rösta på sig själva.</li>
-                    <li><strong>Avslöjande:</strong> Rösterna räknas. Spelaren med flest röster anklagas. Den sanna Impostorn avslöjas.</li>
-                </ol>
-                <p><strong>Att vinna:</strong></p>
-                <ul>
-                    <li><strong>Detektiverna vinner</strong> om Impostorn får flest röster (och det inte är oavgjort om flest röster).</li>
-                    <li><strong>Impostorn vinner</strong> om hen inte får flest röster, eller om hen delar på flest röster.</li>
-                </ul>
+                <p><strong>Mål:</strong> Detektiver hittar Impostorn, som försöker gömma sig.</p>
+                <p><strong>Inställningar:</strong> Ange spelarnamn (minst 3). En är Impostorn.</p>
+                <p><strong>Spelförlopp:</strong> Spelare får frågor. Diskutera svaren för att hitta Impostorn. Rösta.</p>
+                <p><strong>Att vinna:</strong> Detektiver vinner om de hittar Impostorn. Impostorn vinner om inte hittad.</p>
             `
         }
     };
