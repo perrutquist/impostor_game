@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    'use strict';
     // --- DOM Elements ---
-    const screens = {
+    const screenElements = {
         start: document.getElementById('start-screen'),
         nextPlayer: document.getElementById('next-player-screen'),
         question: document.getElementById('question-screen'),
@@ -202,9 +203,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Functions ---
 
-    // Utility function to get translation
-    function t(key, lang = currentLanguage, replacements = {}) {
-        let text = translations[lang]?.[key] || translations.en[key] || `Missing translation: ${key}`;
+    // Utility function to get translation using the currentLanguage state
+    function t(key, replacements = {}) {
+        let text = translations[currentLanguage]?.[key] || translations.en[key] || `Missing translation: ${key}`;
         for (const placeholder in replacements) {
             text = text.replace(`{${placeholder}}`, replacements[placeholder]);
         }
@@ -236,8 +237,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Utility to show/hide screens
     function showScreen(screenId) {
-        Object.values(screens).forEach(screen => screen.classList.remove('active'));
-        screens[screenId].classList.add('active');
+        Object.values(screenElements).forEach(screen => screen.classList.remove('active'));
+        screenElements[screenId].classList.add('active');
         console.log(`Switching to screen: ${screenId}`); // Debugging
     }
 
@@ -354,7 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (gameState === 'asking') {
             if (currentPlayerIndex < players.length) {
-                nextPlayerMessage.textContent = t('passDevicePrompt', currentLanguage, { playerName: currentPlayerName });
+                nextPlayerMessage.textContent = t('passDevicePrompt', { playerName: currentPlayerName });
                 nextPlayerButton.textContent = t('nextPlayerButtonQuestion');
                 showScreen('nextPlayer');
             } else {
@@ -364,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else if (gameState === 'voting') {
              if (currentPlayerIndex < players.length) {
-                nextPlayerMessage.textContent = t('passDevicePrompt', currentLanguage, { playerName: currentPlayerName }); // Re-use prompt
+                nextPlayerMessage.textContent = t('passDevicePrompt', { playerName: currentPlayerName }); // Re-use prompt
                 nextPlayerButton.textContent = t('nextPlayerButtonVote');
                 showScreen('nextPlayer');
             } else {
@@ -389,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentPlayer = players[currentPlayerIndex];
         // Update the dynamic part of the question prompt
         const questionPromptElement = document.querySelector('[data-translate-dynamic="questionPrompt"]');
-        questionPromptElement.innerHTML = t('questionPrompt', currentLanguage, { playerName: '' }); // Set base text
+        questionPromptElement.innerHTML = t('questionPrompt', { playerName: '' }); // Set base text
         questionPlayerName.textContent = currentPlayer.name; // Insert name into span
 
         questionText.textContent = currentPlayer.isImpostor ? currentQuestionPair.impostor : currentQuestionPair.official;
@@ -447,7 +448,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Set the voting prompt using translations and dynamic replacement
         const promptKey = currentPlayer.isImpostor ? 'votingPromptImpostor' : 'votingPromptDetective';
-        votingPrompt.textContent = t(promptKey, currentLanguage, { playerName: currentPlayer.name });
+        votingPrompt.textContent = t(promptKey, { playerName: currentPlayer.name });
 
 
         votingOptionsDiv.innerHTML = ''; // Clear previous options
@@ -481,7 +482,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Check if a vote was actually recorded for the current player before proceeding
         const currentPlayerName = players[currentPlayerIndex]?.name; // Safety check
         if (!currentPlayerName || !currentVotes[currentPlayerName]) {
-            // This case shouldn't happen with the current button logic, but good for safety
+            // This case shouldn't happen with the current button logic (vote recorded before calling submitVote),
+            // but it's a safety check.
             voteError.textContent = t('voteError');
             console.error("SubmitVote called but no vote recorded for:", currentPlayerName);
             return; // Stay on the voting screen or handle error appropriately
@@ -519,7 +521,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sortedPlayers.forEach(player => {
             const li = document.createElement('li');
             // Use translation for vote count text
-            li.textContent = t('voteResultText', currentLanguage, { playerName: player.name, count: player.votesReceived });
+            li.textContent = t('voteResultText', { playerName: player.name, count: player.votesReceived });
             resultsVotesList.appendChild(li);
             if (player.votesReceived > maxVotes) {
                 maxVotes = player.votesReceived;
@@ -549,18 +551,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function resetGame() {
+        // Store names from the completed game *before* clearing the players array
+        const lastPlayerNames = players.map(p => p.name).join('\n');
+
+        // Reset game state variables
         players = [];
         currentQuestionPair = null;
         impostorIndex = -1;
         currentPlayerIndex = 0;
         gameState = 'setup';
         currentVotes = {};
-        // Pre-fill player names for the next game
-        if (players && players.length > 0) {
-            playerNamesInput.value = players.map(p => p.name).join('\n');
-        } else {
-            playerNamesInput.value = ''; // Clear if no players somehow
-        }
+
+        // Pre-fill player names for the next game using stored names
+        playerNamesInput.value = lastPlayerNames;
+
+        // Clear errors and dynamic content
         startError.textContent = '';
         answerError.textContent = '';
         voteError.textContent = '';

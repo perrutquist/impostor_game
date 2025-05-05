@@ -5,7 +5,7 @@
 *   `index.html`: Main HTML file containing the structure for all game screens.
 *   `style.css`: CSS for styling the elements and managing screen visibility.
 *   `script.js`: JavaScript file containing the game logic.
-*   `questions.json`: JSON file storing pairs of questions (official question and impostor question).
+*   `questions_xx.json`: JSON files storing pairs of questions (official question and impostor question) for different languages (e.g., `questions_en.json`, `questions_fr.json`).
 
 ## App Screens (Managed via showing/hiding divs)
 
@@ -42,36 +42,47 @@
     *   Displays: Winner message (e.g., "The Detectives Win!" or "The Impostor Wins!").
     *   Button: "Play Again" (resets to Start Screen)
 
-## Game State (JavaScript Variables)
+## Game State (JavaScript Variables within `script.js` IIFE scope)
 
-*   `players`: Array of player objects, e.g., `[{ name: "Alice", answer: "", votesReceived: 0 }, ...]`.
-*   `questions`: Array loaded from `questions.json`.
+*   `players`: Array of player objects, e.g., `[{ name: "Alice", answer: "", votesReceived: 0, isImpostor: false }, ...]`.
+*   `questions`: Array loaded from the current language's JSON file (e.g., `questions_en.json`).
 *   `currentQuestionPair`: The selected pair for the round `{ official: "...", impostor: "..." }`.
-*   `impostorIndex`: Index of the player who is the impostor.
-*   `currentPlayerIndex`: Index of the player whose turn it is (for questions/voting).
-*   `gameState`: String indicating the current phase (e.g., 'setup', 'asking', 'discussing', 'voting', 'results').
-*   `answers`: Array to temporarily store answers during the question round.
-*   `votes`: Array or object to store who voted for whom.
+*   `impostorIndex`: Index of the player in the `players` array who is the impostor.
+*   `currentPlayerIndex`: Index of the player whose turn it is (used for both asking questions and casting votes).
+*   `gameState`: String indicating the current phase ('setup', 'asking', 'discussing', 'voting', 'results').
+*   `currentVotes`: Object storing votes for the current round, e.g., `{ "Alice": "Bob", "Charlie": "Bob" }` (key is voter, value is voted player).
+*   `currentLanguage`: String indicating the selected language code (e.g., 'en', 'fr').
+*   `translations`: Large object containing UI text strings for all supported languages.
 
-## Key JavaScript Functions
+## Key JavaScript Functions (within `script.js`)
 
-*   `init()`: Initializes the game, sets up event listeners.
-*   `loadQuestions()`: Fetches questions from `questions.json`.
-*   `showScreen(screenId)`: Hides all screens and shows the one with the specified ID.
-*   `startGame()`: Reads player names, selects questions, assigns impostor, transitions to the first 'Next Player' screen.
-*   `promptNextPlayer()`: Shows the 'Next Player' screen for the current player.
-*   `showQuestion()`: Shows the 'Question' screen with the correct question for the current player.
-*   `submitAnswer()`: Stores the answer, increments `currentPlayerIndex`, transitions to 'Next Player' or 'Discussion'.
-*   `showDiscussion()`: Shows the 'Discussion' screen with the official question and all answers.
-*   `startVoting()`: Resets `currentPlayerIndex`, transitions to the first 'Next Player' screen for voting.
-*   `showVotingOptions()`: Shows the 'Voting' screen for the current player.
-*   `submitVote()`: Records the vote, increments `currentPlayerIndex`, transitions to 'Next Player' (for voting) or 'Results'.
-*   `calculateResults()`: Counts votes, determines the winner.
-*   `showResults()`: Displays the 'Final' screen with results and winner.
-*   `resetGame()`: Resets game state and returns to the 'Start' screen.
+*   `t(key, replacements = {})`: Returns the translated string for the given `key` in the `currentLanguage`, performing optional placeholder replacements.
+*   `updateUIForLanguage(lang)`: Updates all static UI text elements based on the selected language and reloads questions.
+*   `showScreen(screenId)`: Hides all screen divs and shows the one with the specified ID.
+*   `shuffleArray(array)`: Shuffles an array in place using Fisher-Yates algorithm.
+*   `loadQuestions()`: Asynchronously fetches and parses questions from the JSON file corresponding to `currentLanguage`, with fallback to English.
+*   `startGame()`: Validates player names, initializes `players` array, shuffles players, selects question pair, assigns impostor, and transitions to the first 'asking' phase 'Next Player' screen.
+*   `promptNextPlayer()`: Shows the 'Next Player' screen, adapting the message and button text based on whether the game is in the 'asking' or 'voting' phase. Transitions to 'Discussion' or 'Results' if all players have had their turn.
+*   `handleNextPlayerButton()`: Event handler for the button on the 'Next Player' screen; calls either `showQuestion()` or `showVotingOptions()` based on `gameState`.
+*   `showQuestion()`: Displays the 'Question' screen with the appropriate question (official or impostor) for the `currentPlayerIndex`.
+*   `submitAnswer()`: Validates and stores the current player's answer, increments `currentPlayerIndex`, and calls `promptNextPlayer()`.
+*   `showDiscussion()`: Displays the 'Discussion' screen, showing the official question and all submitted answers.
+*   `startVoting()`: Sets `gameState` to 'voting', resets `currentPlayerIndex` and `currentVotes`, and calls `promptNextPlayer()` to begin the voting sequence.
+*   `showVotingOptions()`: Displays the 'Voting' screen for the `currentPlayerIndex`, showing buttons for other players. Attaches click listeners to these buttons that record the vote and immediately call `submitVote()`.
+*   `submitVote()`: Increments `currentPlayerIndex` and calls `promptNextPlayer()` to advance to the next voter or to the results phase. (Vote recording now happens in `showVotingOptions`).
+*   `calculateResults()`: Tallies the votes stored in `currentVotes` and updates the `votesReceived` count for each player.
+*   `showResults()`: Displays the 'Final' screen, revealing the impostor, showing vote counts, determining the winner based on votes against the impostor, and displaying the appropriate win message.
+*   `resetGame()`: Resets all game state variables, clears dynamic UI elements, pre-fills player names from the previous round, and returns to the 'Start' screen.
 
 ## Other remarks
 
-*   Need robust handling for player names input (splitting, trimming).
-*   Consider randomizing the order of answers displayed during discussion.
-*   Ensure player privacy during question and voting rounds.
+## Other remarks / Potential Improvements
+
+*   **Player Input:** Player name input handling (splitting, trimming, uniqueness check) is implemented.
+*   **Answer Randomization:** The order of answers in the discussion phase is currently based on the (shuffled) player order. Randomizing this display order could be considered.
+*   **Player Privacy:** The "Pass the device" screen helps maintain privacy during question/voting turns.
+*   **Code Structure:** For significantly larger features, refactoring into modules (e.g., UIManager, GameState) could improve maintainability.
+*   **Translations:** Storing translations in separate files (e.g., `translations_en.json`) instead of a large inline object could make management easier but requires changes to how they are loaded.
+*   **Error Handling:** Error messages could be made more specific in some cases (e.g., voting errors).
+*   **State Management:** For more complex state interactions, a more formal state management pattern could be adopted.
+*   **Styling:** Assumes `style.css` handles screen visibility and general appearance.
