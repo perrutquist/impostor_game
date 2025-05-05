@@ -361,6 +361,13 @@ document.addEventListener('DOMContentLoaded', () => {
              // For now, we'll just clear it on language change.
              startError.textContent = '';
         }
+        // Update rules modal text if it's currently visible
+        if (rulesModal.classList.contains('visible')) {
+            rulesTextContent.innerHTML = t('rulesContent');
+            // Also update the title and close button text inside the modal
+            rulesModal.querySelector('h2').textContent = t('rulesTitle');
+            closeRulesButton.textContent = t('closeRulesButton');
+        }
         // Reload questions for the new language
         loadQuestions();
     }
@@ -740,6 +747,22 @@ document.addEventListener('DOMContentLoaded', () => {
         updateUIForLanguage(e.target.value);
     });
 
+    // Rules Modal Listeners
+    showRulesButton.addEventListener('click', () => {
+        rulesTextContent.innerHTML = t('rulesContent'); // Load current language rules
+        rulesModal.classList.add('visible');
+    });
+     
+    closeRulesButton.addEventListener('click', () => {                    
+        rulesModal.classList.remove('visible');
+    });                     
+
+    // Optional: Close modal if clicking outside the content area
+    rulesModal.addEventListener('click', (event) => {
+        if (event.target === rulesModal) { // Check if the click is on the background overlay
+            rulesModal.classList.remove('visible');
+        }
+    });
 
     // --- Initial Load ---
     // Set initial language based on dropdown default and load corresponding UI/questions
