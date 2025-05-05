@@ -464,7 +464,8 @@ document.addEventListener('DOMContentLoaded', () => {
                      const votedForName = players[votedForIndex].name;
                      currentVotes[currentPlayer.name] = votedForName;
                      console.log(`${currentPlayer.name} voted for ${votedForName}`);
-                     submitVote(); // Proceed immediately after click
+                     // Vote is recorded above, now advance the turn immediately.
+                     submitVote();
                 });
                 votingOptionsDiv.appendChild(button);
             }
