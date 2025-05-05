@@ -413,7 +413,8 @@ document.addEventListener('DOMContentLoaded', () => {
             impostor: shuffledSet[1]
         };
 
-        // Select random impostor
+        // Select random impostor for each new round
+        players.forEach(player => player.isImpostor = false); // Reset impostor status
         impostorIndex = Math.floor(Math.random() * players.length);
         players[impostorIndex].isImpostor = true;
 
