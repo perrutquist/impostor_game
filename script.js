@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `
         },
         sv: { // NOTE: THESE ARE PLACEHOLDERS - REPLACE WITH ACTUAL TRANSLATIONS
-            gameTitle: "Impostor-Spelet",
+            gameTitle: "Bedragare-Spelet",
             languageLabel: "Språk:",
             playerNamesPrompt: "Ange spelarnamn (ett per rad eller kommaseparerade):",
             playerNamesPlaceholder: "Alice\nBob\nCharlie",
@@ -224,18 +224,18 @@ document.addEventListener('DOMContentLoaded', () => {
             discussionTitle: "Diskussionstid!",
             officialQuestionLabel: "Frågan var:",
             answersGivenLabel: "Givna svar:",
-            discussionInstructions: "Diskutera svaren och försök identifiera Impostorn.",
-            discussionNote: "Om du inte fick denna fråga, då är du impostorn!",
+            discussionInstructions: "Diskutera svaren och försök identifiera Bedragaren.",
+            discussionNote: "Om du inte fick denna fråga, då är du bedragaren!",
             proceedToVotingButton: "Gå till röstning",
             votingPromptImpostor: "{playerName}, vem röstar du på?",
-            votingPromptDetective: "{playerName}, vem tror du är Impostorn?",
+            votingPromptDetective: "{playerName}, vem tror du är Bedragaren?",
             castVoteButton: "Rösta",
             voteError: "Ett fel inträffade. Försök rösta igen.",
             resultsTitle: "Resultat",
-            impostorWasLabel: "Impostorn var:",
+            impostorWasLabel: "Bedragaren var:",
             votesReceivedLabel: "Mottagna röster:",
-            winnerDetectives: "Detektiverna vinner! De hittade Impostorn.",
-            winnerImpostor: "Impostorn vinner! Hen undkom upptäckt.",
+            winnerDetectives: "Detektiverna vinner! De hittade Bedragaren.",
+            winnerImpostor: "Bedragaren vinner! Hen undkom upptäckt.",
             playAgainButton: "Spela igen",
             voteResultText: "{playerName}: {count} röst(er)",
             // Rules specific translations (PLACEHOLDERS)
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rulesTitle: "Spelregler",
             closeRulesButton: "Stäng",
             rulesContent: `
-                <p><strong>Mål:</strong> Detektiver hittar Impostorn, som försöker gömma sig.</p>
+                <p><strong>Mål:</strong> Detektiver hittar Bedragaren, som försöker gömma sig.</p>
                 <p><strong>Inställningar:</strong> Ange spelarnamn (minst 3). En är Impostorn.</p>
                 <p><strong>Spelförlopp:</strong> Spelare får frågor. Diskutera svaren för att hitta Impostorn. Rösta.</p>
                 <p><strong>Att vinna:</strong> Detektiver vinner om de hittar Impostorn. Impostorn vinner om inte hittad.</p>
