@@ -16,7 +16,7 @@ This is a simple web application to moderate a game of "The Impostor".
 
 ## How to play using this app
 
-1.  **Setup:** Open the `index.html` file in your browser. Enter the names of all players (at least 3 recommended) and click "Start Game".
+1.  **Setup:** Open the [index.html](https://perrutquist.github.io/impostor_game/) file in your browser. Enter the names of all players (at least 3 recommended) and click "Start Game".
 2.  **Question Round:** The app will prompt each player one by one.
     *   It will ask the current player to confirm they are ready (so others don't see their question).
     *   It will display their secret question.
