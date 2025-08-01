@@ -121,5 +121,61 @@
     [
         "What's your favorite way to learn something new?",
         "What's a learning method that doesn't work for you?"
+    ],
+    [
+        "What's a city you'd love to live in for a year?",
+        "What's a city you've visited but wouldn't live in?"
+    ],
+    [
+        "What's a hobby you could talk about for hours?",
+        "What's a hobby you enjoy in silence?"
+    ],
+    [
+        "What's a song that never gets old for you?",
+        "What's a song you loved once but over-played?"
+    ],
+    [
+        "What's your ideal way to start the morning?",
+        "What's something you only do after midnight?"
+    ],
+    [
+        "What's a gadget you can't live without?",
+        "What's a popular gadget you never bought?"
+    ],
+    [
+        "What's a fashion trend you secretly like?",
+        "What's a fashion trend you hope never returns?"
+    ],
+    [
+        "What's the best compliment you've ever received?",
+        "What's a compliment that makes you uncomfortable?"
+    ],
+    [
+        "What's a smell that brings back good memories?",
+        "What's a smell you can't stand but others seem to enjoy?"
+    ],
+    [
+        "What's a game you could play endlessly?",
+        "What's a game you quit halfway through?"
+    ],
+    [
+        "What's your favorite way to spend a rainy evening?",
+        "What's something you avoid doing on sunny days?"
+    ],
+    [
+        "What's a historical period you'd visit for a day?",
+        "What's a historical period you would avoid entirely?"
+    ],
+    [
+        "What's a household chore you find satisfying?",
+        "What's a household chore you postpone the longest?"
+    ],
+    [
+        "What's a quote that motivates you?",
+        "What's a quote you think is overrated?"
+    ],
+    [
+        "What's an app you open every day?",
+        "What's an app you installed but never use?"
     ]
 ]
