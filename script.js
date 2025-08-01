@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Final Screen Elements
     const impostorReveal = document.getElementById('impostor-reveal');
+    const impostorQuestion = document.getElementById('impostor-question');
     const resultsVotesList = document.getElementById('results-votes');
     const winnerMessage = document.getElementById('winner-message');
     const playAgainButton = document.getElementById('play-again-button');
@@ -92,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             voteError: "An error occurred. Please try voting again.", // Generic error
             resultsTitle: "Results",
             impostorWasLabel: "The Impostor was:",
+            impostorQuestionLabel: "The Impostor's question was:",
             votesReceivedLabel: "Votes Received:",
             winnerDetectives: "The Detectives Win! They found the Impostor.",
             winnerImpostor: "The Impostor Wins! They escaped detection.",
@@ -138,6 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
             voteError: "Une erreur s'est produite. Veuillez réessayer de voter.",
             resultsTitle: "Résultats",
             impostorWasLabel: "L'Imposteur était :",
+            impostorQuestionLabel: "La question de l'Imposteur était :",
             votesReceivedLabel: "Votes reçus :",
             winnerDetectives: "Les Détectives gagnent ! Ils ont trouvé l'Imposteur.",
             winnerImpostor: "L'Imposteur gagne ! Il a échappé à la détection.",
@@ -184,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
             voteError: "Ein Fehler ist aufgetreten. Bitte versuchen Sie erneut abzustimmen.",
             resultsTitle: "Ergebnisse",
             impostorWasLabel: "Der Hochstapler war:",
+            impostorQuestionLabel: "Die Frage des Hochstaplers war:",
             votesReceivedLabel: "Erhaltene Stimmen:",
             winnerDetectives: "Die Detektive gewinnen! Sie haben den Hochstapler gefunden.",
             winnerImpostor: "Der Hochstapler gewinnt! Er ist der Entdeckung entkommen.",
@@ -230,6 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
             voteError: "Ett fel inträffade. Försök rösta igen.",
             resultsTitle: "Resultat",
             impostorWasLabel: "Bedragaren var:",
+            impostorQuestionLabel: "Bedragarens fråga var:",
             votesReceivedLabel: "Mottagna röster:",
             winnerDetectives: "Detektiverna vinner! De hittade Bedragaren.",
             winnerImpostor: "Bedragaren vinner! Hen undkom upptäckt.",
@@ -593,6 +598,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function showResults() {
         const impostor = players[impostorIndex];
         impostorReveal.textContent = impostor.name;
+        impostorQuestion.textContent = currentQuestionPair.impostor;
 
         resultsVotesList.innerHTML = ''; // Clear previous results
         // Sort players by votes received (descending) for display clarity
